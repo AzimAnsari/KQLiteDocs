@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>KQLite</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+        if (storage == null) {
+            const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (osDarkSchemePreferred === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        } else {
+            const savedDarkMode = JSON.parse(storage)
+            if (savedDarkMode === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        }
+    </script>
+    <script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="styles/style.css" rel="Stylesheet">
+    <link href="styles/main.css" rel="Stylesheet">
+    <link href="styles/prism.css" rel="Stylesheet">
+    <link href="styles/logo-styles.css" rel="Stylesheet">
+    <link href="styles/landing.css" rel="Stylesheet">
+    <link href="ui-kit/ui-kit.min.css" rel="Stylesheet">
+    <script type="text/javascript" src="scripts/safe-local-storage_blocking.js"></script>
+    <script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+    <script type="text/javascript" src="scripts/prism.js" async="async"></script>
+    <script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
+    <link href="images/logo-icon.svg">
+    <link href="styles/logo-styles.css" rel="Stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="index.html" tabindex="1">
+                KQLite
+            </a>
+            <a class="button" href="guide/index.html">
+                Get Started
+            </a>
+            <a class="button" href="api.html">
+                API Reference
+            </a>
+            <div class="navigation-controls">
+                <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">
+                    Switch theme
+                </button>
+                <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">
+                    Search in API
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <div id="main" data-item-type="SECTION" role="main">
+                <div class="main-content" style="height: 100%; padding: 0px;">
+                    <div class="flex-container">
+                        <div class="left">
+                            <div>
+                                <h1 class="cover"><span>KQLite</span></h1>
+                                <ul class="tick-list">
+                                    <li>Typesafe Kotlin SQLite API</li>
+                                    <li>Kotlin Multiplatform</li>
+                                    <li>Typesafe Cursor Iterator</li>
+                                    <li>Result Callback Flow</li>
+                                    <li>No Plugin - No generated code</li>
+                                </ul>
+                                <a href="guide/index.html" class="get-started-btn"
+                                    style="padding: 12px 24px; border: 2px solid #C1694F; color: black;">
+                                    Get Started ➜
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="sample-container">
+                                <code class="block language-kotlin" theme="idea"><pre>val ct = TblContact.<span class="token variable">type</span> <span class="token function">AS</span> "contact_type"
+val adults: Flow<span><</span>List<span><</span>Contact>> =
+    TblContact
+        .select(
+            TblContact.<span class="token variable">id</span>,
+            TblContact.<span class="token variable">firstName</span>,
+            TblContact.<span class="token variable">birthDate</span>,
+            ct,
+        ).where { <span class="token implicit-param no-copy"> it: <span class="token punctuation">TblContact</span> </span>
+            (<span class="token bold">it</span>.<span class="token variable">birthDate</span> LTE DATE().now().years(-18)) AND
+                    (<span class="token bold">it</span>.<span class="token variable">deleted</span> NOT_EQ true)
+        }
+        .groupBy(ct)
+        .orderBy(TblContact.<span class="token variable">firstName</span>, Sort.<span class="token variable">DESC</span>)
+        .limit(10)
+        .execute()
+        .asCallbackFlow()
+        .mapToList { <span class="token implicit-param no-copy"> it: <span class="token punctuation">KQLiteCursor</span> </span>
+            //val firstName = it[TblContact.firstName]
+            TblContact.mapper(<span class="token bold">it</span>)
+        }</pre></code>
+                                <span class="copy-tooltip">
+                                    <div class="copy-popup-wrapper popup-to-left"><span
+                                            class="copy-popup-icon"></span><span>Content
+                                            copied to clipboard</span></div><span class="copy-icon"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

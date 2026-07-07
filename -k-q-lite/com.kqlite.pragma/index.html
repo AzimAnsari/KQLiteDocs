@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.kqlite.pragma</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../images/logo-icon.svg">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/guide.css" rel="Stylesheet">
+<link href="../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="KQLite::com.kqlite.pragma////PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../index.html">KQLite</a><span class="delimiter">/</span><span class="current">com.kqlite.pragma</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><h2 class="">Configuring Pragma Settings</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">override fun onConfigure(pragma: KQLitePragma) {<br>    pragma.foreignKeys.set(true)<br>    pragma.journalMode.set(JournalMode.WAL)<br>}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="2049843389%2FClasslikes%2F1592252319" anchor-label="JournalMode" id="2049843389%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-journal-mode/index.html"><span>Journal</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2049843389%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-journal-mode/index.html">JournalMode</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-journal-mode/index.html">JournalMode</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents the journaling mode for a SQLite database, which controls how database transactions are recorded and rolled back. The journaling mode can significantly impact performance and data integrity.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1194433349%2FClasslikes%2F1592252319" anchor-label="KQLitePragma" id="-1194433349%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-q-lite-pragma/index.html"><span>KQLite</span><wbr></wbr><span><span>Pragma</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1194433349%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-k-q-lite-pragma/index.html">KQLitePragma</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">con<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/sqlite/SQLiteConnection.html">SQLiteConnection</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Provides a type-safe and convenient API for interacting with SQLite PRAGMA statements.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="151794973%2FClasslikes%2F1592252319" anchor-label="LockingMode" id="151794973%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-locking-mode/index.html"><span>Locking</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="151794973%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-locking-mode/index.html">LockingMode</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-locking-mode/index.html">LockingMode</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents the database locking mode pragma <a href="-k-q-lite-pragma/locking-mode.html">KQLitePragma.lockingMode</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1040713704%2FClasslikes%2F1592252319" anchor-label="PragmaCommand" id="1040713704%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pragma-command/index.html"><span>Pragma</span><wbr></wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1040713704%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="-pragma-command/index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Represents a SQLite PRAGMA command.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="125557945%2FClasslikes%2F1592252319" anchor-label="PragmaCursor" id="125557945%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pragma-cursor/index.html"><span>Pragma</span><wbr></wbr><span><span>Cursor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="125557945%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Represents a cursor for executing and retrieving results from a PRAGMA statement in SQLite.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1383407218%2FClasslikes%2F1592252319" anchor-label="PragmaMethod" id="-1383407218%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pragma-method/index.html"><span>Pragma</span><wbr></wbr><span><span>Method</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1383407218%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-pragma-method/index.html">PragmaMethod</a></div><div class="brief "><p class="paragraph">Represents a SQLite PRAGMA statement method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1799091525%2FClasslikes%2F1592252319" anchor-label="PragmaTable" id="1799091525%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pragma-table/index.html"><span>Pragma</span><wbr></wbr><span><span>Table</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1799091525%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-pragma-table/index.html">PragmaTable</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pragma<span class="token operator">: </span><a href="-pragma-cursor/index.html">PragmaCursor</a></span></span><span class="token punctuation">)</span> : <a href="../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a></div><div class="brief "><p class="paragraph">Represents a SQLite PRAGMA statement as a virtual table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-112777778%2FClasslikes%2F1592252319" anchor-label="Synchronous" id="-112777778%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-synchronous/index.html"><span><span>Synchronous</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-112777778%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-synchronous/index.html">Synchronous</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-synchronous/index.html">Synchronous</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents the values for the <code class="lang-kotlin">PRAGMA synchronous</code> setting in SQLite, which controls the level of disk synchronization to ensure data is written safely to the disk. Used by <a href="-k-q-lite-pragma/synchronous.html">KQLitePragma.synchronous</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="786284970%2FClasslikes%2F1592252319" anchor-label="TempStore" id="786284970%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-temp-store/index.html"><span>Temp</span><wbr></wbr><span><span>Store</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="786284970%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-temp-store/index.html">TempStore</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-temp-store/index.html">TempStore</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Specifies the storage location for temporary database files. Used by <a href="-k-q-lite-pragma/temp-store.html">KQLitePragma.tempStore</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1788318547%2FClasslikes%2F1592252319" anchor-label="WALCheckpoint" id="-1788318547%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-l-checkpoint/index.html"><span><span>WALCheckpoint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1788318547%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-w-a-l-checkpoint/index.html">WALCheckpoint</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-w-a-l-checkpoint/index.html">WALCheckpoint</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents the checkpointing modes for the Write-Ahead Log (WAL) in SQLite. Used by <a href="-k-q-lite-pragma/wal-checkpoint.html">KQLitePragma.walCheckpoint</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

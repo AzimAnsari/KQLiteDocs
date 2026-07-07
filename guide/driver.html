@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Drivers - KQLite</title>
+    <link href="../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+        if (storage == null) {
+            const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (osDarkSchemePreferred === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        } else {
+            const savedDarkMode = JSON.parse(storage)
+            if (savedDarkMode === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        }
+    </script>
+    <script type="text/javascript" src="../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../styles/style.css" rel="Stylesheet">
+    <link href="../styles/main.css" rel="Stylesheet">
+    <link href="../styles/prism.css" rel="Stylesheet">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../styles/guide.css" rel="Stylesheet">
+    <link href="../ui-kit/ui-kit.min.css" rel="Stylesheet">
+    <script type="text/javascript" src="../scripts/safe-local-storage_blocking.js"></script>
+    <script type="text/javascript" src="../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/main.js" defer="defer"></script>
+    <script type="text/javascript" src="../scripts/prism.js" async="async"></script>
+    <script type="text/javascript" src="../ui-kit/ui-kit.min.js" defer="defer"></script>
+    <link href="../images/logo-icon.svg">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../index.html" tabindex="1">
+                KQLite
+            </a>
+            <a class="button" href="../api.html">
+                API Reference
+            </a>
+            <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+            </button>
+            <div class="navigation-controls--break ui-kit_mobile-only"></div>
+            <div class="library-version" id="library-version"> 0.2.0 </div>
+            <div class="navigation-controls">
+                <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+                </button>
+                <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">
+                    Search in
+                    API
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <nav id="leftColumn" class="sidebar">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox" aria-label="Table of contents">
+                        <div class="dropdown--header">
+                            <span>
+                                KQLite
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner">
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/index.html" class="toc--link">
+                                        <span>Overview</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/tables.html" class="toc--link">
+                                        <span>Tables</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/columns.html" class="toc--link">
+                                        <span>Columns</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0" data-active="true">
+                                <div class="toc--row">
+                                    <a href="guide/driver.html" class="toc--link">
+                                        <span>Drivers</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/database.html" class="toc--link">
+                                        <span>Database</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/quick.html" class="toc--link">
+                                        <span>Quick API</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/insert.html" class="toc--link">
+                                        <span>INSERT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/select.html" class="toc--link">
+                                        <span>SELECT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/update.html" class="toc--link">
+                                        <span>UPDATE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/delete.html" class="toc--link">
+                                        <span>DELETE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/flow.html" class="toc--link">
+                                        <span>Flow</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/migration.html" class="toc--link">
+                                        <span>Migration</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </nav>
+            <div id="main" role="main" style="margin-left: 0px;">
+                <div class="main-content" id="content">
+                    <div class="breadcrumbs"></div>
+                    <div class="cover ">
+                        <h1 class="cover"><span><span>KQLite Drivers</span></span></h1>
+                    </div>
+                    <p class="paragraph">
+                        <a class="token class-name" href="../-k-q-lite/com.kqlite.database/-k-q-lite-driver/index.html"
+                            target="_blank">KQLiteDriver</a> is the core abstraction responsible for executing SQL
+                        operations and managing database connections in KQLite. It acts as a bridge between KQLite and
+                        the underlying SQLite engine, ensuring consistent behavior across platforms in Kotlin
+                        Multiplatform (KMP) projects.
+                    </p>
+                    <p class="paragraph">
+                        It is recommended to use <a href="https://developer.android.com/kotlin/multiplatform/sqlite"
+                            target="_blank">BundledSQLiteDriver</a>, which provides a reliable and consistent SQLite
+                        implementation across all supported platforms.
+                    </p>
+                    <h3>Adding dependency for driver</h3>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token function">sourceSets</span> <span class="token punctuation">{</span>
+        <span class="token variable">commonMain</span>.<span class="token function">dependencies</span> <span class="token punctuation">{</span>
+            <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token string">"androidx.sqlite:sqlite-bundled:2.6.2"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+                    </div>
+
+                    <h3>Getting database absolute path</h3>
+
+                    <div class="tabbedcontent">
+                        <div class="tabs-section" tabs-section="tabs-section">
+                            <button class="section-tab" data-togglable="COMMON" data-active="COMMON">commonMain</button>
+                            <button class="section-tab" data-togglable="ANDROID">androidMain</button>
+                            <button class="section-tab" data-togglable="IOS">iosMain</button>
+                            <button class="section-tab" data-togglable="JVM">jvmMain</button>
+                        </div>
+                        <div class="tabs-section-body">
+                            <div data-togglable="COMMON">
+                                <div class="sample-container">
+                                    <pre class="language-kotlin">
+                                        <code class="block language-kotlin" theme="idea">expect fun getDatabaseAbsolutePath(name: String): String</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <div data-togglable="ANDROID">
+                                <div class="sample-container">
+                                    <pre class="language-kotlin">
+                                        <code class="block language-kotlin" theme="idea">import android.content.Context
+import org.koin.java.KoinJavaComponent.inject
+
+private val context: Context by inject(Context::class.java)
+
+actual fun getDatabaseAbsolutePath(name: String): String {
+    return context.getDatabasePath(name).absolutePath
+}</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <div data-togglable="IOS">
+                                <div class="sample-container">
+                                    <pre class="language-kotlin">
+                                        <code class="block language-kotlin" theme="idea">import platform.Foundation.NSDocumentDirectory
+import platform.Foundation.NSFileManager
+import platform.Foundation.NSURL
+import platform.Foundation.NSUserDomainMask
+
+actual fun getDatabaseAbsolutePath(name: String): String {
+    val documents = NSFileManager.defaultManager.URLsForDirectory(
+        NSDocumentDirectory,
+        NSUserDomainMask
+    ).firstOrNull()
+
+    val databaseUrl = (documents as? NSURL)?.URLByAppendingPathComponent(name)
+
+    return databaseUrl?.path ?: throw Exception("Failed to get database path")
+}</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <div data-togglable="JVM">
+                                <div class="sample-container">
+                                    <pre class="language-kotlin">
+                                        <code class="block language-kotlin" theme="idea">import java.io.File
+
+actual fun getDatabaseAbsolutePath(name: String): String {
+    val userHome = System.getProperty("user.home")
+    val databaseFolder = File(userHome, ".kqlite-contacts")
+    if (!databaseFolder.exists()) {
+        databaseFolder.mkdirs()
+    }
+    return File(databaseFolder, name).absolutePath
+}</code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3>Creating KQLiteDriver</h3>
+                    <p>KQLite is independent of underlying driver implementation. Any SQLite driver that can open a
+                        compatible
+                        <a href="https://developer.android.com/reference/kotlin/androidx/sqlite/SQLiteConnection.html"
+                            target="_blank">SQLiteConnection</a>
+                        works.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">class ContactsDbDriver(filePath: String) : KQLiteDriver {
+    override val dbFile: String = filePath
+    override val version: Int = ContactsDatabase.VERSION
+    private val sqliteDriver = BundledSQLiteDriver()
+
+    override fun <span class="token function">open</span>(flags: Int?): SQLiteConnection {
+        return if (flags == null) {
+            sqliteDriver.open(dbFile)
+        } else {
+            sqliteDriver.open(dbFile, flags)
+        }
+    }
+}</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+                    <div style="margin-top: 64px;">
+                        <a class="" href="columns.html"> ⬅ Columns </a>
+                        <a class="next-btn" href="database.html"> Database ⮕ </a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer--container">
+                        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+                        <div class="footer--content">
+                            <div>
+                                <div>Copyright &copy; 2025 MohdAzim Ansari. All rights reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

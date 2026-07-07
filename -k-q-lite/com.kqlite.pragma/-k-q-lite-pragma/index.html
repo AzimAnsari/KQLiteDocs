@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>KQLitePragma</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/guide.css" rel="Stylesheet">
+<link href="../../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="KQLite::com.kqlite.pragma/KQLitePragma///PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../../index.html">KQLite</a><span class="delimiter">/</span><a href="../index.html">com.kqlite.pragma</a><span class="delimiter">/</span><span class="current">KQLitePragma</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>KQLite</span><wbr></wbr><span><span>Pragma</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="index.html">KQLitePragma</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">con<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/sqlite/SQLiteConnection.html">SQLiteConnection</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Provides a type-safe and convenient API for interacting with SQLite PRAGMA statements.</p><p class="paragraph">This class encapsulates various PRAGMA commands and functions, allowing developers to query and modify the internal state and operational parameters of the SQLite database connection without writing raw SQL. It offers properties for simple value-based pragmas (like <code class="lang-kotlin">journal_mode</code>) and methods for pragmas that return cursors or require arguments (like <code class="lang-kotlin">table_info</code>).</p><p class="paragraph">For detailed information on each PRAGMA, refer: <a href="https://www.sqlite.org/pragma.html">SQLite PRAGMA Docs</a></p><h3 class="">Example</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Inside KQLiteDatabase<br>override fun onConfigure(pragma: KQLitePragma) {<br>        // Get the current journal mode<br>        val currentMode = pragma.journalMode.get()<br>        println(&quot;Journal mode is: $currentMode&quot;)<br><br>        // Set a new journal mode<br>        pragma.journalMode.set(JournalMode.WAL)<br><br>        // Check if foreign keys are enabled<br>        val areForeignKeysOn = pragma.foreignKeys.get()<br><br>        // Get information about a table<br>        val tableInfoCursor = pragma.tableInfo(myTable)<br>        tableInfoCursor.use { cursor -&gt;<br>            while (cursor.hasNext()) {<br>                val row = cursor.next()<br>                // process row data<br>            }<br>        }<br>    }</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-pragma-cursor/index.html"><span>Pragma</span><wbr></wbr><span><span>Cursor</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-pragma-table/index.html"><span>Pragma</span><wbr></wbr><span><span>Table</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.database/-k-q-lite-database/on-configure.html"><span>KQLite</span><wbr></wbr><span>Database.</span><wbr></wbr><span>on</span><wbr></wbr><span><span>Configure</span></span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="1053895789%2FConstructors%2F1592252319" anchor-label="KQLitePragma" id="1053895789%2FConstructors%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-q-lite-pragma.html"><span>KQLite</span><wbr></wbr><span><span>Pragma</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1053895789%2FConstructors%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">con<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/sqlite/SQLiteConnection.html">SQLiteConnection</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-707133353%2FProperties%2F1592252319" anchor-label="analysisLimit" id="-707133353%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="analysis-limit.html"><span>analysis</span><wbr></wbr><span><span>Limit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-707133353%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="analysis-limit.html">analysisLimit</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">analysis_limit</code> for the query planner.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1521138293%2FProperties%2F1592252319" anchor-label="applicationId" id="-1521138293%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="application-id.html"><span>application</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1521138293%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="application-id.html">applicationId</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">application_id</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1539206819%2FProperties%2F1592252319" anchor-label="automaticIndex" id="-1539206819%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="automatic-index.html"><span>automatic</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1539206819%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="automatic-index.html">automaticIndex</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">automatic_index</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-539847008%2FProperties%2F1592252319" anchor-label="autoVacuum" id="-539847008%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="auto-vacuum.html"><span>auto</span><wbr></wbr><span><span>Vacuum</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-539847008%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="auto-vacuum.html">autoVacuum</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or set the auto-vacuum mode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-913699890%2FProperties%2F1592252319" anchor-label="busyTimeout" id="-913699890%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="busy-timeout.html"><span>busy</span><wbr></wbr><span><span>Timeout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-913699890%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="busy-timeout.html">busyTimeout</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">busy_timeout</code> in milliseconds.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="939097331%2FProperties%2F1592252319" anchor-label="cacheSize" id="939097331%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cache-size.html"><span>cache</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="939097331%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="cache-size.html">cacheSize</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the suggested maximum number of database disk pages that SQLite will hold in memory at one time per open database file.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-869975590%2FProperties%2F1592252319" anchor-label="cacheSpill" id="-869975590%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cache-spill.html"><span>cache</span><wbr></wbr><span><span>Spill</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-869975590%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="cache-spill.html">cacheSpill</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">cache_spill</code> setting.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1546839513%2FProperties%2F1592252319" anchor-label="caseSensitiveLike" id="1546839513%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="case-sensitive-like.html"><span>case</span><wbr></wbr><span>Sensitive</span><wbr></wbr><span><span>Like</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1546839513%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="case-sensitive-like.html">caseSensitiveLike</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">case_sensitive_like</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1322216687%2FProperties%2F1592252319" anchor-label="cellSizeCheck" id="-1322216687%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cell-size-check.html"><span>cell</span><wbr></wbr><span>Size</span><wbr></wbr><span><span>Check</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1322216687%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="cell-size-check.html">cellSizeCheck</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">cell_size_check</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1808889844%2FProperties%2F1592252319" anchor-label="checkpointFullfsync" id="-1808889844%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="checkpoint-fullfsync.html"><span>checkpoint</span><wbr></wbr><span><span>Fullfsync</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1808889844%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="checkpoint-fullfsync.html">checkpointFullfsync</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">checkpoint_fullfsync</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-52354097%2FProperties%2F1592252319" anchor-label="collationList" id="-52354097%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collation-list.html"><span>collation</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-52354097%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="collation-list.html">collationList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all collating sequences defined for the current database connection.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1531314777%2FProperties%2F1592252319" anchor-label="compileOptions" id="1531314777%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="compile-options.html"><span>compile</span><wbr></wbr><span><span>Options</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1531314777%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="compile-options.html">compileOptions</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of the compile-time options used to build the SQLite library.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2044647435%2FProperties%2F1592252319" anchor-label="databaseList" id="2044647435%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="database-list.html"><span>database</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2044647435%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="database-list.html">databaseList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all attached databases.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="345397736%2FProperties%2F1592252319" anchor-label="dataVersion" id="345397736%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="data-version.html"><span>data</span><wbr></wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="345397736%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="data-version.html">dataVersion</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries the <code class="lang-kotlin">data_version</code> of the database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1373766194%2FProperties%2F1592252319" anchor-label="deferForeignKeys" id="-1373766194%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="defer-foreign-keys.html"><span>defer</span><wbr></wbr><span>Foreign</span><wbr></wbr><span><span>Keys</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1373766194%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="defer-foreign-keys.html">deferForeignKeys</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">defer_foreign_keys</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="469940273%2FProperties%2F1592252319" anchor-label="encoding" id="469940273%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="encoding.html"><span><span>encoding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="469940273%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="encoding.html">encoding</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the text encoding for the main database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1802224654%2FProperties%2F1592252319" anchor-label="foreignKeys" id="1802224654%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="foreign-keys.html"><span>foreign</span><wbr></wbr><span><span>Keys</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1802224654%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="foreign-keys.html">foreignKeys</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the enforcement of foreign key constraints.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="80862001%2FProperties%2F1592252319" anchor-label="freelistCount" id="80862001%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="freelist-count.html"><span>freelist</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="80862001%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="freelist-count.html">freelistCount</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries the number of unused pages in the database file's freelist.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1707285412%2FProperties%2F1592252319" anchor-label="fullfsync" id="1707285412%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fullfsync.html"><span><span>fullfsync</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1707285412%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="fullfsync.html">fullfsync</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">fullfsync</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1805250866%2FProperties%2F1592252319" anchor-label="functionList" id="-1805250866%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="function-list.html"><span>function</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1805250866%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="function-list.html">functionList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all SQL functions known to the database connection.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-337239630%2FProperties%2F1592252319" anchor-label="hardHeapLimit" id="-337239630%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hard-heap-limit.html"><span>hard</span><wbr></wbr><span>Heap</span><wbr></wbr><span><span>Limit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-337239630%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="hard-heap-limit.html">hardHeapLimit</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the hard upper bound on the amount of memory that can be allocated by SQLite.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1421017060%2FProperties%2F1592252319" anchor-label="ignoreCheckConstraints" id="1421017060%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ignore-check-constraints.html"><span>ignore</span><wbr></wbr><span>Check</span><wbr></wbr><span><span>Constraints</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421017060%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="ignore-check-constraints.html">ignoreCheckConstraints</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">ignore_check_constraints</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1864424380%2FProperties%2F1592252319" anchor-label="journalMode" id="1864424380%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="journal-mode.html"><span>journal</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1864424380%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="journal-mode.html">journalMode</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="../-journal-mode/index.html">JournalMode</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the journal mode for the database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-25978431%2FProperties%2F1592252319" anchor-label="journalSizeLimit" id="-25978431%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="journal-size-limit.html"><span>journal</span><wbr></wbr><span>Size</span><wbr></wbr><span><span>Limit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-25978431%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="journal-size-limit.html">journalSizeLimit</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the maximum size limit for the rollback journal file in bytes.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="967572547%2FProperties%2F1592252319" anchor-label="legacyAlterTable" id="967572547%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="legacy-alter-table.html"><span>legacy</span><wbr></wbr><span>Alter</span><wbr></wbr><span><span>Table</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="967572547%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="legacy-alter-table.html">legacyAlterTable</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">legacy_alter_table</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-863510168%2FProperties%2F1592252319" anchor-label="legacyFileFormat" id="-863510168%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="legacy-file-format.html"><span>legacy</span><wbr></wbr><span>File</span><wbr></wbr><span><span>Format</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-863510168%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="legacy-file-format.html">legacyFileFormat</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">legacy_file_format</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-33624036%2FProperties%2F1592252319" anchor-label="lockingMode" id="-33624036%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="locking-mode.html"><span>locking</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-33624036%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="locking-mode.html">lockingMode</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="../-locking-mode/index.html">LockingMode</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the database connection's locking mode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-3176600%2FProperties%2F1592252319" anchor-label="maxPageCount" id="-3176600%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="max-page-count.html"><span>max</span><wbr></wbr><span>Page</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-3176600%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="max-page-count.html">maxPageCount</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the maximum number of pages in the database file.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1194813876%2FProperties%2F1592252319" anchor-label="mmapSize" id="1194813876%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mmap-size.html"><span>mmap</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1194813876%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="mmap-size.html">mmapSize</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the maximum size of the memory-mapped I/O region in bytes.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1318278%2FProperties%2F1592252319" anchor-label="moduleList" id="-1318278%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="module-list.html"><span>module</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1318278%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="module-list.html">moduleList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all registered virtual table modules.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1478933110%2FProperties%2F1592252319" anchor-label="pageCount" id="1478933110%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="page-count.html"><span>page</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1478933110%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="page-count.html">pageCount</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries the total number of pages in the database file.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-729485068%2FProperties%2F1592252319" anchor-label="pageSize" id="-729485068%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="page-size.html"><span>page</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-729485068%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="page-size.html">pageSize</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the size of the database pages in bytes.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="299947434%2FProperties%2F1592252319" anchor-label="pragmaList" id="299947434%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pragma-list.html"><span>pragma</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="299947434%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="pragma-list.html">pragmaList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all pragma statements supported by the current version of SQLite.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1692911650%2FProperties%2F1592252319" anchor-label="queryOnly" id="1692911650%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="query-only.html"><span>query</span><wbr></wbr><span><span>Only</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1692911650%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="query-only.html">queryOnly</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">query_only</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="866472585%2FProperties%2F1592252319" anchor-label="readUncommitted" id="866472585%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="read-uncommitted.html"><span>read</span><wbr></wbr><span><span>Uncommitted</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="866472585%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="read-uncommitted.html">readUncommitted</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">read_uncommitted</code> isolation level.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="911514057%2FProperties%2F1592252319" anchor-label="recursiveTriggers" id="911514057%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="recursive-triggers.html"><span>recursive</span><wbr></wbr><span><span>Triggers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="911514057%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="recursive-triggers.html">recursiveTriggers</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">recursive_triggers</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1142151567%2FProperties%2F1592252319" anchor-label="reverseUnorderedSelects" id="-1142151567%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reverse-unordered-selects.html"><span>reverse</span><wbr></wbr><span>Unordered</span><wbr></wbr><span><span>Selects</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1142151567%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="reverse-unordered-selects.html">reverseUnorderedSelects</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">reverse_unordered_selects</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2089998751%2FProperties%2F1592252319" anchor-label="schemaVersion" id="2089998751%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="schema-version.html"><span>schema</span><wbr></wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2089998751%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="schema-version.html">schemaVersion</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">schema_version</code> of the database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="261444834%2FProperties%2F1592252319" anchor-label="secureDelete" id="261444834%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="secure-delete.html"><span>secure</span><wbr></wbr><span><span>Delete</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="261444834%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="secure-delete.html">secureDelete</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">secure_delete</code> flag, which controls how content is deleted from the database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="674612529%2FProperties%2F1592252319" anchor-label="softHeapLimit" id="674612529%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="soft-heap-limit.html"><span>soft</span><wbr></wbr><span>Heap</span><wbr></wbr><span><span>Limit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="674612529%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="soft-heap-limit.html">softHeapLimit</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the soft heap limit for the SQLite memory allocator.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-298196787%2FProperties%2F1592252319" anchor-label="synchronous" id="-298196787%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="synchronous.html"><span><span>synchronous</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-298196787%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="synchronous.html">synchronous</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="../-synchronous/index.html">Synchronous</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the disk synchronization strategy.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2078117418%2FProperties%2F1592252319" anchor-label="tableList" id="2078117418%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="table-list.html"><span>table</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2078117418%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="table-list.html">tableList</a><span class="token operator">: </span><a href="../-pragma-cursor/index.html">PragmaCursor</a></div><div class="brief "><p class="paragraph">Queries a list of all tables and views in the main database schema.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1495481705%2FProperties%2F1592252319" anchor-label="tempStore" id="1495481705%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="temp-store.html"><span>temp</span><wbr></wbr><span><span>Store</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1495481705%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="temp-store.html">tempStore</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="../-temp-store/index.html">TempStore</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets where temporary tables and indices are stored.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-7492124%2FProperties%2F1592252319" anchor-label="tempStoreDirectory" id="-7492124%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="temp-store-directory.html"><span>temp</span><wbr></wbr><span>Store</span><wbr></wbr><span><span>Directory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-7492124%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="temp-store-directory.html">tempStoreDirectory</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the directory where temporary files are stored.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-811362067%2FProperties%2F1592252319" anchor-label="threads" id="-811362067%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="threads.html"><span><span>threads</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-811362067%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="threads.html">threads</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the suggested number of threads for the background thread pool.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="181506878%2FProperties%2F1592252319" anchor-label="trustedSchema" id="181506878%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="trusted-schema.html"><span>trusted</span><wbr></wbr><span><span>Schema</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="181506878%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="trusted-schema.html">trustedSchema</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">trusted_schema</code> flag.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-830631415%2FProperties%2F1592252319" anchor-label="userVersion" id="-830631415%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-version.html"><span>user</span><wbr></wbr><span><span>Version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-830631415%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="user-version.html">userVersion</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the application-defined <code class="lang-kotlin">user_version</code> number.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="633924445%2FProperties%2F1592252319" anchor-label="walAutocheckpoint" id="633924445%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wal-autocheckpoint.html"><span>wal</span><wbr></wbr><span><span>Autocheckpoint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="633924445%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="wal-autocheckpoint.html">walAutocheckpoint</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the automatic checkpoint threshold in WAL mode.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-355628381%2FProperties%2F1592252319" anchor-label="writableSchema" id="-355628381%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="writable-schema.html"><span>writable</span><wbr></wbr><span><span>Schema</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-355628381%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="writable-schema.html">writableSchema</a><span class="token operator">: </span><a href="../-pragma-command/index.html">PragmaCommand</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Queries or sets the <code class="lang-kotlin">writable_schema</code> flag, which allows direct modification of the internal schema tables (like <code class="lang-kotlin">sqlite_schema</code>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1453669911%2FFunctions%2F1592252319" anchor-label="foreignKeyCheck" id="1453669911%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="foreign-key-check.html"><span>foreign</span><wbr></wbr><span>Key</span><wbr></wbr><span><span>Check</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1453669911%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="foreign-key-check.html"><span class="token function">foreignKeyCheck</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Checks for foreign key violations in the database.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1198064402%2FFunctions%2F1592252319" anchor-label="foreignKeyList" id="-1198064402%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="foreign-key-list.html"><span>foreign</span><wbr></wbr><span>Key</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1198064402%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="foreign-key-list.html"><span class="token function">foreignKeyList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves a list of all foreign key constraints for a given table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1317542098%2FFunctions%2F1592252319" anchor-label="indexInfo" id="-1317542098%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index-info.html"><span>index</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1317542098%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index-info.html"><span class="token function">indexInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indexName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves information about the columns of a specific index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-21896903%2FFunctions%2F1592252319" anchor-label="indexList" id="-21896903%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index-list.html"><span>index</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-21896903%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index-list.html"><span class="token function">indexList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves a list of all indices associated with a given table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1144661940%2FFunctions%2F1592252319" anchor-label="indexXInfo" id="1144661940%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index-x-info.html"><span>index</span><wbr></wbr><span><span>XInfo</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1144661940%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index-x-info.html"><span class="token function">indexXInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">indexName<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves extended information about the columns of a specific index.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="368400327%2FFunctions%2F1592252319" anchor-label="integrityCheck" id="368400327%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="integrity-check.html"><span>integrity</span><wbr></wbr><span><span>Check</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="368400327%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="integrity-check.html"><span class="token function">integrityCheck</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Performs a comprehensive integrity check of the database or a specific table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2100809517%2FFunctions%2F1592252319" anchor-label="isIntegrityCheckOK" id="2100809517%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-integrity-check-o-k.html"><span>is</span><wbr></wbr><span>Integrity</span><wbr></wbr><span>Check</span><wbr></wbr><span><span>OK</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2100809517%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="is-integrity-check-o-k.html"><span class="token function">isIntegrityCheckOK</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">A convenience function that performs an integrity check and returns a boolean indicating success.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1753651699%2FFunctions%2F1592252319" anchor-label="isQuickCheckOK" id="-1753651699%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-quick-check-o-k.html"><span>is</span><wbr></wbr><span>Quick</span><wbr></wbr><span>Check</span><wbr></wbr><span><span>OK</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1753651699%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="is-quick-check-o-k.html"><span class="token function">isQuickCheckOK</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">A convenience function that performs a quick integrity check and returns a boolean indicating success.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1276176574%2FFunctions%2F1592252319" anchor-label="optimize" id="1276176574%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="optimize.html"><span><span>optimize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1276176574%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="optimize.html"><span class="token function">optimize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mask<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Runs database optimization tasks.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1068011943%2FFunctions%2F1592252319" anchor-label="quickCheck" id="1068011943%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="quick-check.html"><span>quick</span><wbr></wbr><span><span>Check</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1068011943%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="quick-check.html"><span class="token function">quickCheck</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Performs a faster, less thorough integrity check of the database or a specific table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-817025670%2FFunctions%2F1592252319" anchor-label="shrinkMemory" id="-817025670%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="shrink-memory.html"><span>shrink</span><wbr></wbr><span><span>Memory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-817025670%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="shrink-memory.html"><span class="token function">shrinkMemory</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Attempts to free up memory that is no longer needed by the database connection.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-767457363%2FFunctions%2F1592252319" anchor-label="tableInfo" id="-767457363%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="table-info.html"><span>table</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-767457363%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="table-info.html"><span class="token function">tableInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves detailed information about the columns of a specific table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="984848863%2FFunctions%2F1592252319" anchor-label="tableXInfo" id="984848863%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="table-x-info.html"><span>table</span><wbr></wbr><span><span>XInfo</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="984848863%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="table-x-info.html"><span class="token function">tableXInfo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><a href="../../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Retrieves extended information about the columns of a specific table, including hidden columns.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="145988914%2FFunctions%2F1592252319" anchor-label="walCheckpoint" id="145988914%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wal-checkpoint.html"><span>wal</span><wbr></wbr><span><span>Checkpoint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="145988914%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="wal-checkpoint.html"><span class="token function">walCheckpoint</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">checkpoint<span class="token operator">: </span><a href="../-w-a-l-checkpoint/index.html">WALCheckpoint</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.cursor/-k-q-lite-cursor/index.html">KQLiteCursor</a></div><div class="brief "><p class="paragraph">Executes a WAL (Write-Ahead Log) checkpoint operation.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

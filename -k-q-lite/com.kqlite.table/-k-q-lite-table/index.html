@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>KQLiteTable</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/guide.css" rel="Stylesheet">
+<link href="../../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="KQLite::com.kqlite.table/KQLiteTable///PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../../index.html">KQLite</a><span class="delimiter">/</span><a href="../index.html">com.kqlite.table</a><span class="delimiter">/</span><span class="current">KQLiteTable</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>KQLite</span><wbr></wbr><span><span>Table</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="index.html">KQLiteTable</a> <span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a> </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">temp<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">ifNotExists<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">strict<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">withoutRowId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Represents a database table definition in KQLite.</p><p class="paragraph">This abstract class serves as the foundation for creating type-safe table schemas. To define a table, create a singleton <code class="lang-kotlin">object</code> that inherits from <code class="lang-kotlin">KQLiteTable</code>. Inside the object, use the provided DSL functions (e.g., <code class="lang-kotlin">longColumn</code>, <code class="lang-kotlin">stringColumn</code>) to declare the columns and their constraints.</p><p class="paragraph">The core responsibilities of this class are:</p><ul><li><p class="paragraph"><strong>Column Definition:</strong> Define columns using predefined functions like <a href="integer-column.html">integerColumn</a>, <a href="text-column.html">textColumn</a>, etc.</p></li><li><p class="paragraph"><strong>Constraint Definition:</strong> Specify table-level constraints using the <a href="constraints.html">constraints</a> property.</p></li><li><p class="paragraph"><strong>Index Definition:</strong> Create indexes on columns using the <a href="indexes.html">indexes</a> property.</p></li></ul><h3 class="">Example Usage:</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">object Products : KQLiteTable(&quot;products&quot;) {<br>    val productId = longColumn(&quot;ProductId&quot;).primaryKey()<br>    val name = textColumn(&quot;Name&quot;).notNull()<br>    val price = doubleColumn(&quot;Price&quot;).notNull()<br>    val discount = doubleColumn(&quot;Discount&quot;).notNull().default(0.0)<br>    val inTime = dateTimeColumn(&quot;InTime&quot;).default(CURRENT_TIMESTAMP)<br>    val propertiesJson = jsonObjectColumn(&quot;Properties&quot;)<br><br>    override val constraints: (ConstraintBuilder.() -&gt; Unit)? = {<br>        // Ensure the price is always positive<br>        check { price GT 0.0 }<br><br>        // Ensure the discount is not greater than the price<br>        constraint(&quot;chk_discount&quot;).check { discount LTE price }<br>    }<br><br>    override val indexes: (IndexBuilder.() -&gt; Unit)? = {<br>        createIndex(&quot;price_index&quot;).on(price)<br>    }<br>}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">The class provides builders for defining table-level constraints and indexes, as well as a rich set of column types and modifiers to model a SQLite table accurately.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>name</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The name of the table in the database. It will be escaped for special characters.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>temp</span></span></u></div></span></div><div><div class="title"><p class="paragraph">If <code class="lang-kotlin">true</code>, creates a <code class="lang-kotlin">TEMP</code> table. Default is <code class="lang-kotlin">false</code>.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>if</span><wbr></wbr><span>Not</span><wbr></wbr><span><span>Exists</span></span></u></div></span></div><div><div class="title"><p class="paragraph">If <code class="lang-kotlin">true</code>, the <code class="lang-kotlin">CREATE TABLE</code> statement will include <code class="lang-kotlin">IF NOT EXISTS</code>. Default is <code class="lang-kotlin">true</code>.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>strict</span></span></u></div></span></div><div><div class="title"><p class="paragraph">If <code class="lang-kotlin">true</code>, enables <code class="lang-kotlin">STRICT</code> mode for the table, enforcing more rigid data type validation.</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.constraint/-constraint-builder/index.html"><span>Constraint</span><wbr></wbr><span><span>Builder</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.constraint/-index-builder/index.html"><span>Index</span><wbr></wbr><span><span>Builder</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.statement/quick-insert.html"><span>quick</span><wbr></wbr><span><span>Insert</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.statement/quick-select.html"><span>quick</span><wbr></wbr><span><span>Select</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-k-q-lite-adapter/index.html"><span>KQLite</span><wbr></wbr><span><span>Adapter</span></span></a></div></span></div><div></div></div></div></div><h4 class="tableheader">Inheritors</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../../com.kqlite.pragma/-pragma-table/index.html">PragmaTable</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-alias-table/index.html">AliasTable</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-json-columns/index.html">JsonColumns</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-master-columns/index.html">MasterColumns</a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-s-q-lite-sequence/index.html">SQLiteSequence</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-899730370%2FConstructors%2F1592252319" anchor-label="KQLiteTable" id="-899730370%2FConstructors%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-k-q-lite-table.html"><span>KQLite</span><wbr></wbr><span><span>Table</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-899730370%2FConstructors%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">temp<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">ifNotExists<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">strict<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">withoutRowId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-1414968630%2FProperties%2F1592252319" anchor-label="constraints" id="-1414968630%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="constraints.html"><span><span>constraints</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1414968630%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">open </span><span class="token keyword">val </span><a href="constraints.html">constraints</a><span class="token operator">: </span><a href="../../com.kqlite.constraint/-constraint-builder/index.html">ConstraintBuilder</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</div><div class="brief "><p class="paragraph">Defines table-level constraints using a DSL.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="990591168%2FProperties%2F1592252319" anchor-label="indexes" id="990591168%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="indexes.html"><span><span>indexes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="990591168%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">open </span><span class="token keyword">val </span><a href="indexes.html">indexes</a><span class="token operator">: </span><a href="../../com.kqlite.constraint/-index-builder/index.html">IndexBuilder</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</div><div class="brief "><p class="paragraph">Defines indexes on the table to improve query performance.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1529754507%2FProperties%2F1592252319" anchor-label="rowId" id="1529754507%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="row-id.html"><span>row</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1529754507%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="row-id.html">rowId</a><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Represents the SQLite <code class="lang-kotlin">rowid</code> column.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-344915033%2FProperties%2F1592252319" anchor-label="tableName" id="-344915033%2FProperties%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="table-name.html"><span>table</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-344915033%2FProperties%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="table-name.html">tableName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The escaped and safe name of the table, ready to be used in SQL queries.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-716419235%2FFunctions%2F1592252319" anchor-label="AS" id="-716419235%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../com.kqlite.operator/-a-s.html"><span><span>AS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-716419235%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="index.html">KQLiteTable</a><span class="token punctuation">.</span><a href="../../com.kqlite.operator/-a-s.html"><span class="token function">AS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">alias<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-alias-table/index.html">AliasTable</a></div><div class="brief "><p class="paragraph">Creates an alias for a table using SQL <code class="lang-kotlin">AS</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="204179195%2FFunctions%2F1592252319" anchor-label="autoIncrement" id="204179195%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="auto-increment.html"><span>auto</span><wbr></wbr><span><span>Increment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="204179195%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="auto-increment.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="auto-increment.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="auto-increment.html"><span class="token function">autoIncrement</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="auto-increment.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Marks this <code class="lang-kotlin">INTEGER PRIMARY KEY</code> column of type <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a> to <code class="lang-kotlin">AUTOINCREMENT</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-803082371%2FFunctions%2F1592252319" anchor-label="blobColumn" id="-803082371%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="blob-column.html"><span>blob</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-803082371%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="blob-column.html"><span class="token function">blobColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">BLOB</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1847167838%2FFunctions%2F1592252319" anchor-label="booleanColumn" id="-1847167838%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="boolean-column.html"><span>boolean</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1847167838%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="boolean-column.html"><span class="token function">booleanColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">BOOLEAN</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="165450219%2FFunctions%2F1592252319" anchor-label="byteArrayColumn" id="165450219%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="byte-array-column.html"><span>byte</span><wbr></wbr><span>Array</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="165450219%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="byte-array-column.html"><span class="token function">byteArrayColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">BLOB</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="915270760%2FFunctions%2F1592252319" anchor-label="byteColumn" id="915270760%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="byte-column.html"><span>byte</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="915270760%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="byte-column.html"><span class="token function">byteColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">TINYINT</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte/index.html">Byte</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1182375498%2FFunctions%2F1592252319" anchor-label="charColumn" id="-1182375498%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="char-column.html"><span>char</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1182375498%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="char-column.html"><span class="token function">charColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">CHAR(1)</code> column in the table, intended to store a single <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1669221895%2FFunctions%2F1592252319" anchor-label="check" id="1669221895%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check.html"><span><span>check</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1669221895%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="check.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="check.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="check.html"><span class="token function">check</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">clause<span class="token operator">: </span><a href="../../com.kqlite.statement/-clause/index.html">Clause</a><span class="token punctuation">.</span><span class="token punctuation">(</span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="check.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="check.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Adds a <code class="lang-kotlin">CHECK</code> constraint to this column.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1751811736%2FFunctions%2F1592252319" anchor-label="collate" id="-1751811736%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collate.html"><span><span>collate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1751811736%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="collate.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="collate.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="collate.html"><span class="token function">collate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">collation<span class="token operator">: </span><a href="../-collate/index.html">Collate</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="collate.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Adds a <code class="lang-kotlin">COLLATE</code> clause to this column, specifying the text comparison behavior.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1498441202%2FFunctions%2F1592252319" anchor-label="dateColumn" id="-1498441202%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="date-column.html"><span>date</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1498441202%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="date-column.html"><span class="token function">dateColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-date/index.html">KQLiteDate</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">DATE</code> column to store a date.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-70536965%2FFunctions%2F1592252319" anchor-label="dateTimeColumn" id="-70536965%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="date-time-column.html"><span>date</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-70536965%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="date-time-column.html"><span class="token function">dateTimeColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-date-time/index.html">KQLiteDateTime</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">DATETIME</code> column to store a dateTime.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1383279471%2FFunctions%2F1592252319" anchor-label="default" id="-1383279471%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="default.html"><span><span>default</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1383279471%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="default.html"><span class="token function">default</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="default.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Sets a <code class="lang-kotlin">DEFAULT</code> value for this column.</p></div><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="default.html"><span class="token function">default</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="default.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="default.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Sets a <code class="lang-kotlin">DEFAULT</code> value for this column using <a href="../../com.kqlite.column/-literal/index.html">com.kqlite.column.Literal</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1982150415%2FFunctions%2F1592252319" anchor-label="doubleColumn" id="-1982150415%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="double-column.html"><span>double</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1982150415%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="double-column.html"><span class="token function">doubleColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">REAL</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2083325834%2FFunctions%2F1592252319" anchor-label="enumColumn" id="-2083325834%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enum-column.html"><span>enum</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2083325834%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="enum-column.html">E</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="enum-column.html">E</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><a href="enum-column.html"><span class="token function">enumColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">entries<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.enums/-enum-entries/index.html">EnumEntries</a><span class="token operator">&lt;</span><a href="enum-column.html">E</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="enum-column.html">E</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">ENUM</code> column to store an enum value by its name.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1469206550%2FFunctions%2F1592252319" anchor-label="floatColumn" id="1469206550%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="float-column.html"><span>float</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1469206550%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="float-column.html"><span class="token function">floatColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">FLOAT</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-float/index.html">Float</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1211176154%2FFunctions%2F1592252319" anchor-label="generatedAlwaysAs" id="-1211176154%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="generated-always-as.html"><span>generated</span><wbr></wbr><span>Always</span><wbr></wbr><span><span>As</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1211176154%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="generated-always-as.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="generated-always-as.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="generated-always-as.html"><span class="token function">generatedAlwaysAs</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">column<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">type<span class="token operator">: </span><a href="../../com.kqlite.column/-generated/index.html">Generated</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="generated-always-as.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines this column as a <code class="lang-kotlin">GENERATED ALWAYS AS</code> whose value is computed from other columns.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-932951789%2FFunctions%2F1592252319" anchor-label="getColumns" id="-932951789%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-columns.html"><span>get</span><wbr></wbr><span><span>Columns</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-932951789%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-columns.html"><span class="token function">getColumns</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves a list of all columns defined in this table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1653631081%2FFunctions%2F1592252319" anchor-label="intColumn" id="1653631081%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="int-column.html"><span>int</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1653631081%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="int-column.html"><span class="token function">intColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">INT</code> column in the table, intended to store an <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="495304888%2FFunctions%2F1592252319" anchor-label="integerColumn" id="495304888%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="integer-column.html"><span>integer</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="495304888%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="integer-column.html"><span class="token function">integerColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">INTEGER</code> column in the table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1914846709%2FFunctions%2F1592252319" anchor-label="jsonArrayColumn" id="-1914846709%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="json-array-column.html"><span>json</span><wbr></wbr><span>Array</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1914846709%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="json-array-column.html"><span class="token function">jsonArrayColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-json-array/index.html">KQLiteJsonArray</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">JSON ARRAY</code> column to store a JSON array.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="341256264%2FFunctions%2F1592252319" anchor-label="jsonColumn" id="341256264%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="json-column.html"><span>json</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="341256264%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="json-column.html"><span class="token function">jsonColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-json/index.html">KQLiteJson</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">JSON</code> column to store any valid JSON data.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1654442215%2FFunctions%2F1592252319" anchor-label="jsonObjectColumn" id="1654442215%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="json-object-column.html"><span>json</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1654442215%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="json-object-column.html"><span class="token function">jsonObjectColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-json-object/index.html">KQLiteJsonObject</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">JSON OBJECT</code> column to store a JSON object.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1421031393%2FFunctions%2F1592252319" anchor-label="julianDayColumn" id="1421031393%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="julian-day-column.html"><span>julian</span><wbr></wbr><span>Day</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421031393%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="julian-day-column.html"><span class="token function">julianDayColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-julian-day/index.html">KQLiteJulianDay</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">DOUBLE</code> column to store a Julian Day Number.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1104743460%2FFunctions%2F1592252319" anchor-label="longColumn" id="-1104743460%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="long-column.html"><span>long</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1104743460%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="long-column.html"><span class="token function">longColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">INTEGER</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1616388301%2FFunctions%2F1592252319" anchor-label="onConflict" id="1616388301%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-conflict.html"><span>on</span><wbr></wbr><span><span>Conflict</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1616388301%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="on-conflict.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="on-conflict.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="on-conflict.html"><span class="token function">onConflict</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><a href="../-action/index.html">Action</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="on-conflict.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Specifies the <code class="lang-kotlin">ON CONFLICT</code> resolution algorithm for a <code class="lang-kotlin">UNIQUE</code>, <code class="lang-kotlin">PRIMARY KEY</code>, or <code class="lang-kotlin">NOT NULL</code> constraint.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-25563520%2FFunctions%2F1592252319" anchor-label="primaryKey" id="-25563520%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="primary-key.html"><span>primary</span><wbr></wbr><span><span>Key</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-25563520%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="primary-key.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="primary-key.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="primary-key.html"><span class="token function">primaryKey</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sort<span class="token operator">: </span><a href="../../com.kqlite.operator/-sort/index.html">Sort</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="primary-key.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Designates this column as the <code class="lang-kotlin">PRIMARY KEY</code> for the table.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="473095166%2FFunctions%2F1592252319" anchor-label="realColumn" id="473095166%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="real-column.html"><span>real</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="473095166%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="real-column.html"><span class="token function">realColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">REAL</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="429553018%2FFunctions%2F1592252319" anchor-label="references" id="429553018%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="references.html"><span><span>references</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="429553018%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="references.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="references.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="references.html"><span class="token function">references</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">column<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="references.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">onDelete<span class="token operator">: </span><a href="../-foreign-key-action/index.html">ForeignKeyAction</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onUpdate<span class="token operator">: </span><a href="../-foreign-key-action/index.html">ForeignKeyAction</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="references.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Adds a <code class="lang-kotlin">FOREIGN KEY</code> constraint to this column, referencing another column.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1152056778%2FFunctions%2F1592252319" anchor-label="shortColumn" id="-1152056778%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="short-column.html"><span>short</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1152056778%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="short-column.html"><span class="token function">shortColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-short/index.html">Short</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">SMALLINT</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-short/index.html">Short</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-509391567%2FFunctions%2F1592252319" anchor-label="stringColumn" id="-509391567%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="string-column.html"><span>string</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-509391567%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="string-column.html"><span class="token function">stringColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">TEXT</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="244051213%2FFunctions%2F1592252319" anchor-label="textColumn" id="244051213%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="text-column.html"><span>text</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="244051213%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="text-column.html"><span class="token function">textColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">TEXT</code> column in the table, intended to store a <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-588903763%2FFunctions%2F1592252319" anchor-label="timeColumn" id="-588903763%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="time-column.html"><span>time</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-588903763%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="time-column.html"><span class="token function">timeColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-time/index.html">KQLiteTime</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">TIME</code> column to store a time.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1317755602%2FFunctions%2F1592252319" anchor-label="toString" id="-1317755602%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-string.html"><span>to</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1317755602%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a string representation of the table object.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="547185495%2FFunctions%2F1592252319" anchor-label="uByteColumn" id="547185495%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="u-byte-column.html"><span>u</span><wbr></wbr><span>Byte</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="547185495%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="u-byte-column.html"><span class="token function">uByteColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">TINYINT UNSIGNED</code> column in the table, intended to store an unsigned 8-bit integer (<a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-byte/index.html">UByte</a>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="810473370%2FFunctions%2F1592252319" anchor-label="uIntColumn" id="810473370%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="u-int-column.html"><span>u</span><wbr></wbr><span>Int</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="810473370%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="u-int-column.html"><span class="token function">uIntColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-int/index.html">UInt</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">INT UNSIGNED</code> column in the table, intended to store an unsigned 32-bit integer (<a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-int/index.html">UInt</a>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1472828725%2FFunctions%2F1592252319" anchor-label="uLongColumn" id="-1472828725%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="u-long-column.html"><span>u</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1472828725%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="u-long-column.html"><span class="token function">uLongColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-long/index.html">ULong</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">INTEGER</code> column in the table, intended to store an unsigned 64-bit integer (<a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-long/index.html">ULong</a>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1689105358%2FFunctions%2F1592252319" anchor-label="unique" id="-1689105358%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unique.html"><span><span>unique</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1689105358%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="unique.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="unique.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="unique.html"><span class="token function">unique</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="unique.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Adds a <code class="lang-kotlin">UNIQUE</code> constraint to this column.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-303363173%2FFunctions%2F1592252319" anchor-label="unixEpochColumn" id="-303363173%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unix-epoch-column.html"><span>unix</span><wbr></wbr><span>Epoch</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-303363173%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="unix-epoch-column.html"><span class="token function">unixEpochColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="../../com.kqlite.column/-k-q-lite-unix-epoch/index.html">KQLiteUnixEpoch</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">BIGINT</code> column to store a Unix Epoch timestamp.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="322201895%2FFunctions%2F1592252319" anchor-label="uShortColumn" id="322201895%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="u-short-column.html"><span>u</span><wbr></wbr><span>Short</span><wbr></wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="322201895%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">fun </span><a href="u-short-column.html"><span class="token function">uShortColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-short/index.html">UShort</a><span class="token operator">?</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Defines a nullable <code class="lang-kotlin">SMALLINT UNSIGNED</code> column in the table, intended to store an unsigned 16-bit integer (<a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-u-short/index.html">UShort</a>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

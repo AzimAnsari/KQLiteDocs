@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Quick API - KQLite</title>
+    <link href="../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+        if (storage == null) {
+            const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (osDarkSchemePreferred === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        } else {
+            const savedDarkMode = JSON.parse(storage)
+            if (savedDarkMode === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        }
+    </script>
+    <script type="text/javascript" src="../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../styles/style.css" rel="Stylesheet">
+    <link href="../styles/main.css" rel="Stylesheet">
+    <link href="../styles/prism.css" rel="Stylesheet">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../styles/guide.css" rel="Stylesheet">
+    <link href="../ui-kit/ui-kit.min.css" rel="Stylesheet">
+    <script type="text/javascript" src="../scripts/safe-local-storage_blocking.js"></script>
+    <script type="text/javascript" src="../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/main.js" defer="defer"></script>
+    <script type="text/javascript" src="../scripts/prism.js" async="async"></script>
+    <script type="text/javascript" src="../ui-kit/ui-kit.min.js" defer="defer"></script>
+    <link href="../images/logo-icon.svg">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../index.html" tabindex="1">
+                KQLite
+            </a>
+            <a class="button" href="../api.html">
+                API Reference
+            </a>
+            <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+            </button>
+            <div class="navigation-controls--break ui-kit_mobile-only"></div>
+            <div class="library-version" id="library-version"> 0.2.0 </div>
+            <div class="navigation-controls">
+                <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+                </button>
+                <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">
+                    Search in
+                    API
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <nav id="leftColumn" class="sidebar">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox" aria-label="Table of contents">
+                        <div class="dropdown--header">
+                            <span>
+                                KQLite
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner">
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/index.html" class="toc--link">
+                                        <span>Overview</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/tables.html" class="toc--link">
+                                        <span>Tables</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/columns.html" class="toc--link">
+                                        <span>Columns</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/driver.html" class="toc--link">
+                                        <span>Drivers</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/database.html" class="toc--link">
+                                        <span>Database</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0" data-active="true">
+                                <div class="toc--row">
+                                    <a href="guide/quick.html" class="toc--link">
+                                        <span>Quick API</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/insert.html" class="toc--link">
+                                        <span>INSERT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/select.html" class="toc--link">
+                                        <span>SELECT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/update.html" class="toc--link">
+                                        <span>UPDATE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/delete.html" class="toc--link">
+                                        <span>DELETE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/flow.html" class="toc--link">
+                                        <span>Flow</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/migration.html" class="toc--link">
+                                        <span>Migration</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </nav>
+            <div id="main" role="main" style="margin-left: 0px;">
+                <div class="main-content" id="content">
+                    <div class="breadcrumbs"></div>
+                    <div class="cover ">
+                        <h1 class="cover"><span><span>KQLite Quick API</span></span></h1>
+                    </div>
+
+                    <p class="paragraph">
+                        KQLite provides simple convenience APIs to perform CRUD operations quickly.
+                        These are used to perform quick one time operations like inserting single item into table,
+                        performing simple select query, updating single item or deleting quickly using where.
+                    </p>
+
+                    <h3>Quick INSERT</h3>
+                    <p class="paragraph">
+                        Executes SQLite INSERT and inserts a single row into the table. This is a convenience function
+                        for a simple insert operation. It creates, binds, executes, and closes an `InsertStatement` in a
+                        single call.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// INSERT INTO contacts (first_name, last_name, phone, type, birth_date) 
+// VALUES (?, ?, JSON_ARRAY('1234567890'), ?, DATE('2000-01-01'));
+TblContact.quickInsert { <span class="token implicit-param no-copy"> it: <span class="token punctuation">TblContact</span> </span>
+    it.firstName.bind("John")
+    it.lastName.bind("Doe")
+    it.phone.bind(JSON_ARRAY("1234567890"))
+    it.type.bind(ContactType.Family)
+    it.birthDate.bind(DATE("2000-01-01"))
+}</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+                    <p class="paragraph">
+                        Conflict resolution algorithm can also be specified using onConflict action.
+                        For more details check <a href="../-k-q-lite/com.kqlite.statement/quick-insert.html"
+                            target="_blank">quickInsert docs.</a>
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// INSERT OR REPLACE INTO contacts (first_name, last_name, phone, type, birth_date) 
+// VALUES (?, ?, JSON_ARRAY('111111111'), ?, DATE('1999-01-01'));
+TblContact.quickInsert(onConflict = Action.REPLACE) {
+    it.firstName.bind("John")
+    it.lastName.bind("Conner")
+    it.phone.bind(JSON_ARRAY("111111111"))
+    it.type.bind(ContactType.Family)
+    it.birthDate.bind(DATE("1999-01-01"))
+}</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+                    <h3>Quick SELECT</h3>
+                    <p class="paragraph">
+                        Executes SQLite SELECT and returns database cursor which is auto closed when fully iterated.
+                        This is a convenience function for simple queries of most common types.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// SELECT * FROM contacts;
+TblContact.quickSelect().forEach {
+    println(it[TblContact.firstName] + " " + it[TblContact.type])
+}</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+                    <p class="paragraph">
+                        Specific columns can be passed to arguements in select.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// SELECT first_name, type FROM contacts;
+TblContact
+    .quickSelect(TblContact.firstName, TblContact.type)
+    .forEach {
+        println(it[TblContact.firstName] + " " + it[TblContact.type])
+    }</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+                    <p class="paragraph">
+                        WHERE clause can be defined to filter results.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// SELECT first_name, type FROM contacts WHERE type = ?;
+TblContact
+    .quickSelect(TblContact.firstName, TblContact.type) {
+        it.type <span class="token function">EQ</span> ContactType.Family
+    }
+    .forEach {
+        println(it[TblContact.firstName] + " " + it[TblContact.type])
+    }</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+                    <h3>Quick UPDATE</h3>
+                    <p class="paragraph">
+                        Executes an SQLite UPDATE statement with the provided binding values and WHERE clause.
+                        The WHERE parameter is required; to update all rows, pass null, which executes the statement
+                        without a WHERE clause.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// UPDATE contacts SET phone = JSON_ARRAY('1234567890','0987654321') WHERE id = ?;
+TblContact.quickUpdate(
+    binding = {
+        it.phone.bind(JSON_ARRAY("1234567890", "0987654321"))
+    },
+    where = {
+        it.id EQ 1
+    }
+)</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+                    <h3>Quick DELETE</h3>
+                    <p class="paragraph">
+                        Executes an SQLite DELETE statement with the provided WHERE clause.
+                        The WHERE parameter is required; to delete all rows, pass null, which executes the statement
+                        without a WHERE clause.
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// DELETE FROM contacts WHERE id = ?;
+TblContact.quickDelete {
+    it.id EQ 1
+}</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <div style="margin-top: 64px;">
+                        <a class="" href="driver.html"> ⬅ Drivers </a>
+                        <a class="next-btn" href="insert.html"> INSERT ⮕ </a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer--container">
+                        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+                        <div class="footer--content">
+                            <div>
+                                <div>Copyright &copy; 2025 MohdAzim Ansari. All rights reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

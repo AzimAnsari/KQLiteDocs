@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>JSON_PATCH</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../images/logo-icon.svg">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/guide.css" rel="Stylesheet">
+<link href="../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="member" id="content" pageIds="KQLite::com.kqlite.functions//JSON_PATCH/#com.kqlite.column.KQLiteColumn[TypeParam(bounds=[com.kqlite.column.KQLiteJson])]#com.kqlite.column.KQLiteColumn[com.kqlite.column.KQLiteJson?]/PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../index.html">KQLite</a><span class="delimiter">/</span><a href="index.html">com.kqlite.functions</a><span class="delimiter">/</span><span class="current">JSON_PATCH</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>JSON_</span><wbr></wbr><span>PATCH</span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-j-s-o-n_-p-a-t-c-h.html">T</a><span class="token operator"> : </span><a href="../com.kqlite.column/-k-q-lite-json/index.html">KQLiteJson</a><span class="token operator">&gt; </span><a href="-j-s-o-n_-p-a-t-c-h.html"><span class="token function">JSON_PATCH</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">json<span class="token operator">: </span><a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-j-s-o-n_-p-a-t-c-h.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">patch<span class="token operator">: </span><a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="../com.kqlite.column/-k-q-lite-json/index.html">KQLiteJson</a><span class="token operator">?</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-j-s-o-n_-p-a-t-c-h.html">T</a><span class="token operator">&gt;</span></div><p class="paragraph">Applies a JSON patch to a JSON document.</p><p class="paragraph">This function modifies the input <code class="lang-kotlin">json</code> document according to the instructions in the <code class="lang-kotlin">patch</code> document, following the standard defined in RFC 7396. The <code class="lang-kotlin">patch</code> document is a JSON object or array of objects that describes a sequence of operations to perform (e.g., &quot;add&quot;, &quot;remove&quot;, &quot;replace&quot;).</p><p class="paragraph">If either <code class="lang-kotlin">json</code> or <code class="lang-kotlin">patch</code> is not well-formed JSON, this function will throw an error. If the patch operations are invalid (e.g., trying to replace a value that doesn't exist), the function may throw an error or return the original <code class="lang-kotlin">json</code> document, depending on the nature of the error.</p><h3 class="">Example:</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val jsonCol = jsonColumn(&quot;data&quot;) // Contains '{&quot;a&quot;: &quot;hello&quot;, &quot;b&quot;: [1, 2]}'<br>val patchCol = jsonColumn(&quot;patch&quot;) // Contains '[{&quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/a&quot;, &quot;value&quot;: &quot;world&quot;}, {&quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/b/-&quot;, &quot;value&quot;: 3}]'<br><br>// SELECT JSON_PATCH(data, patch)<br>// Result: '{&quot;a&quot;:&quot;world&quot;,&quot;b&quot;:[1,2,3]}'<br>select(JSON_PATCH(jsonCol, patchCol)).from(MyTable).execute()<br><br>// Example with literals<br>val originalJson = JSON(&quot;&quot;&quot;{&quot;a&quot;: &quot;hello&quot;}&quot;&quot;&quot;)<br>val patchJson = JSON(&quot;&quot;&quot;[{&quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/b&quot;, &quot;value&quot;: &quot;new&quot;}]&quot;&quot;&quot;)<br>// SELECT JSON_PATCH(originalJson, patchJson)<br>// Result: '{&quot;a&quot;:&quot;hello&quot;,&quot;b&quot;:&quot;new&quot;}'<br>select(JSON_PATCH(originalJson, patchJson)).execute()</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a> of given type <a href="-j-s-o-n_-p-a-t-c-h.html">json</a> containing the resulting JSON document.</p></span><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>json</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The <a href="../com.kqlite.column/-k-q-lite-json/index.html">KQLiteJson</a> column to modify.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>patch</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The <a href="../com.kqlite.column/-k-q-lite-json/index.html">KQLiteJson</a> column containing the JSON patch instructions.</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div></div></span></div><div><div class="title"><p class="paragraph"><a href="https://www.sqlite.org/json1.html#the_json_patch_function">SQLite Documentation</a></p></div></div></div></div></div></div></div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>SELECT - KQLite</title>
+    <link href="../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+        if (storage == null) {
+            const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (osDarkSchemePreferred === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        } else {
+            const savedDarkMode = JSON.parse(storage)
+            if (savedDarkMode === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        }
+    </script>
+    <script type="text/javascript" src="../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../styles/style.css" rel="Stylesheet">
+    <link href="../styles/main.css" rel="Stylesheet">
+    <link href="../styles/prism.css" rel="Stylesheet">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../styles/guide.css" rel="Stylesheet">
+    <link href="../ui-kit/ui-kit.min.css" rel="Stylesheet">
+    <script type="text/javascript" src="../scripts/safe-local-storage_blocking.js"></script>
+    <script type="text/javascript" src="../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/main.js" defer="defer"></script>
+    <script type="text/javascript" src="../scripts/prism.js" async="async"></script>
+    <script type="text/javascript" src="../ui-kit/ui-kit.min.js" defer="defer"></script>
+    <link href="../images/logo-icon.svg">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../index.html" tabindex="1">
+                KQLite
+            </a>
+            <a class="button" href="../api.html">
+                API Reference
+            </a>
+            <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+            </button>
+            <div class="navigation-controls--break ui-kit_mobile-only"></div>
+            <div class="library-version" id="library-version"> 0.2.0 </div>
+            <div class="navigation-controls">
+                <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+                </button>
+                <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">
+                    Search in
+                    API
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <nav id="leftColumn" class="sidebar">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox" aria-label="Table of contents">
+                        <div class="dropdown--header">
+                            <span>
+                                KQLite
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner">
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/index.html" class="toc--link">
+                                        <span>Overview</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/tables.html" class="toc--link">
+                                        <span>Tables</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/columns.html" class="toc--link">
+                                        <span>Columns</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/driver.html" class="toc--link">
+                                        <span>Drivers</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/database.html" class="toc--link">
+                                        <span>Database</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/quick.html" class="toc--link">
+                                        <span>Quick API</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/insert.html" class="toc--link">
+                                        <span>INSERT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0" data-active="true">
+                                <div class="toc--row">
+                                    <a href="guide/select.html" class="toc--link">
+                                        <span>SELECT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/update.html" class="toc--link">
+                                        <span>UPDATE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/delete.html" class="toc--link">
+                                        <span>DELETE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/flow.html" class="toc--link">
+                                        <span>Flow</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/migration.html" class="toc--link">
+                                        <span>Migration</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </nav>
+            <div id="main" role="main" style="margin-left: 0px;">
+                <div class="main-content" id="content">
+                    <div class="breadcrumbs"></div>
+                    <div class="cover ">
+                        <h1 class="cover"><span>KQLite SELECT</span></h1>
+                    </div>
+                    <p class="paragraph">
+                        KQLite provides rich DSL to select from table.
+                        There is a quick convenience API to select rows including where clause.
+                    </p>
+                    <p class="paragraph">
+                        Every KQLite SelectStatement returns
+                        <a href="../-k-q-lite/com.kqlite.cursor/-k-q-lite-cursor/index.html"
+                            target="_blank">KQLiteCursor</a> which is a single use Iterator.
+                        KQLiteCursor is AutoCloseable and is closed automatically once iteration is finished.
+                    </p>
+                    <p class="paragraph">
+                        SELECT query is executed over table only when data is read from KQLiteCursor.
+                    </p>
+                    <h3>Quickly selecting data from KQLiteTable</h3>
+                    <div class="sample-container">
+                        <pre
+                            class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT * FROM Artists;</span>
+<span class="token keyword">val</span> <span class="token variable">cursor</span><span class="token operator">:</span> <span class="token class-name">KQLiteCursor</span> <span class="token operator">=</span> <span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token function">quickSelect</span><span class="token punctuation">()</span>
+<span class="token variable">cursor</span><span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+    <span class="token keyword">val</span> <span class="token variable">id</span><span class="token operator">:</span> <span class="token class-name">Long</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">]</span>
+    <span class="token keyword">val</span> <span class="token variable">name</span><span class="token operator">:</span> <span class="token class-name">String</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">]</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artist: $<span class="token variable">id</span>, $<span class="token variable">name</span>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token variable">cursor</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">()</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT ArtistId, Name FROM Artists;</span>
+<span class="token class-name">Artists</span>
+    <span class="token punctuation">.</span><span class="token function">quickSelect</span><span class="token punctuation">(</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">,</span> <span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+        <span class="token keyword">val</span> <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token class-name">Long</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">]</span>
+        <span class="token keyword">val</span> <span class="token variable">name</span><span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">]</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artist: $<span class="token variable">id</span>, $<span class="token variable">name</span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT Name FROM Artists WHERE Name LIKE ? COLLATE NOCASE;</span>
+<span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token function">quickSelect</span><span class="token punctuation">(</span>
+    <span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">,</span>
+    <span class="token property">where</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+        <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">.</span><span class="token function">LIKE</span><span class="token punctuation">(</span><span class="token string">"%cool%"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">COLLATE</span><span class="token punctuation">(</span><span class="token class-name">Collate</span><span class="token punctuation">.</span><span class="token property">NOCASE</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artist: ${</span><span class="token bold">it</span>[<span class="token class-name">Artists</span>.<span class="token variable">artistName</span><span class="token string">]}"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>ORDER BY and LIMIT</h3>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT Name, Milliseconds, UnitPrice FROM Tracks</span>
+<span class="token comment">// WHERE UnitPrice > ? AND Milliseconds &lt; ?</span>
+<span class="token comment">// ORDER BY TrackId LIMIT ?;</span>
+<span class="token class-name">Tracks</span>
+    <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackName</span><span class="token punctuation">,</span> <span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">milliseconds</span><span class="token punctuation">,</span> <span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">unitPrice</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">where</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Tracks </span>
+        <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">unitPrice</span>.<span class="token function">GT</span>(<span class="token number">1.0</span>) <span class="token operator">AND</span> <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">milliseconds</span>.<span class="token function">LT</span>(<span class="token number">120000</span>)
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackId</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+        <span class="token keyword">val</span> <span class="token variable">name</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackName</span><span class="token punctuation">]</span>
+        <span class="token keyword">val</span> <span class="token variable">unitPrice</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">unitPrice</span><span class="token punctuation">]</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Track $<span class="token variable">name</span> is costlier at $<span class="token variable">unitPrice</span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>GROUP BY and HAVING</h3>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT AlbumId, COUNT(TrackId) FROM Tracks</span>
+<span class="token comment">// GROUP BY AlbumId</span>
+<span class="token comment">// HAVING COUNT(TrackId) BETWEEN ? AND ?</span>
+<span class="token comment">// ORDER BY AlbumId;</span>
+<span class="token class-name">Tracks</span>
+    <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackId</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">having</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Tracks </span>
+        <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackId</span><span class="token punctuation">)</span>.<span class="token function">BETWEEN</span><span class="token punctuation">(</span><span class="token number">18L</span><span class="token operator">..</span><span class="token number">20L</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+        <span class="token keyword">val</span> <span class="token variable">albumId</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span><span class="token punctuation">]</span>
+        <span class="token keyword">val</span> <span class="token variable">trackCount</span> <span class="token operator">=</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token class-name">Tracks</span><span class="token punctuation">.</span><span class="token property">trackId</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"$<span class="token variable">albumId</span>, $<span class="token variable">trackCount</span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>Mapping KQLiteCursor</h3>
+                    <p class="paragraph">
+                        <a href="../-k-q-lite/com.kqlite.cursor/-k-q-lite-cursor/index.html"
+                            target="_blank">KQLiteCursor</a> implements and provides all the benifits of
+                        <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterator/"
+                            target="_blank">Iterator.</a>
+
+                        See also <a href="../-k-q-lite/com.kqlite.table/-k-q-lite-adapter/index.html"
+                            target="_blank">KQLiteAdapter</a>
+                    </p>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token class-name">Artists</span>
+    <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">where</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+        <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">artistId</span> <span class="token function">EQ</span> <span class="token number">5</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">asSequence</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+        <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">]</span> <span class="token operator">to</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistName</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Pair&lt;Long, String?&gt; </span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artist: ${<span class="token bold">it</span>.<span class="token variable">first</span>}, ${<span class="token bold">it</span>.<span class="token variable">second</span>}"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>JOIN statement</h3>
+                    <p class="paragraph">
+                        KQLite supports following types of JOIN
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/join.html"
+                                target="_blank">join</a>
+                        </li>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/inner-join.html"
+                                target="_blank">innerJoin</a>
+                        </li>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/left-join.html"
+                                target="_blank">leftJoin</a>
+                        </li>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/right-join.html"
+                                target="_blank">rightJoin</a>
+                        </li>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/cross-join.html"
+                                target="_blank">crossJoin</a>
+                        </li>
+                        <li>
+                            <a href="../-k-q-lite/com.kqlite.statement/-select-statement/full-join.html"
+                                target="_blank">fullJoin</a>
+                        </li>
+                    </ul>
+                    <div class="sample-container">
+                        <pre
+                            class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// SELECT artists.ArtistId, albums.AlbumId</span>
+<span class="token comment">// FROM artists LEFT JOIN albums</span>
+<span class="token comment">// ON albums.ArtistId = artists.ArtistId</span>
+<span class="token comment">// WHERE AlbumId IS NULL;</span>
+<span class="token keyword">val</span> <span class="token variable">cursor</span> <span class="token operator">=</span> <span class="token class-name">Artists</span>
+    <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">,</span> <span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">leftJoin</span><span class="token punctuation">(</span><span class="token class-name">Albums</span>)
+    <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">,</span> <span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">where</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+        <span class="token class-name">Albums</span><span class="token punctuation">.</span><span class="token property">albumId</span> <span class="token operator">IS</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">()</span>
+
+<span class="token keyword">val</span> <span class="token variable">artistList</span> <span class="token operator">=</span> <span class="token variable">cursor</span><span class="token punctuation">.</span><span class="token function">asSequence</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> KQLiteCursor </span>
+        <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">()</span>
+
+<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artists with no albums: ${<span class="token variable">artistList</span>.joinToString()}"</span><span class="token punctuation">)</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>SELECT DISTINCT</h3>
+                    <div class="sample-container">
+                        <pre class="language-kotlin" tabindex="0"><code class="block language-kotlin" theme="idea">// SELECT DISTINCT city FROM customers ORDER BY city;
+Customers
+    .select(Customers.city, distinct = true)
+    .orderBy(Customers.city)
+    .execute()
+    .forEach {
+        println(it[Customers.city])
+    }</code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+
+                    <div style="margin-top: 64px;">
+                        <a class="" href="insert.html"> ⬅ KQLite INSERT </a>
+                        <a class="next-btn" href="update.html"> KQLite UPDATE ⮕ </a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer--container">
+                        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+                        <div class="footer--content">
+                            <div>
+                                <div>Copyright &copy; 2025 MohdAzim Ansari. All rights reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

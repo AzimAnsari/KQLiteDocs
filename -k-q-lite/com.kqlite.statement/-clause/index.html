@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Clause</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/guide.css" rel="Stylesheet">
+<link href="../../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="KQLite::com.kqlite.statement/Clause///PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../../index.html">KQLite</a><span class="delimiter">/</span><a href="../index.html">com.kqlite.statement</a><span class="delimiter">/</span><span class="current">Clause</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Clause</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="index.html">Clause</a></div><p class="paragraph">A sealed class that provides a domain-specific language (DSL) for constructing SQL clauses, primarily used in <code class="lang-kotlin">WHERE</code> and <code class="lang-kotlin">HAVING</code> conditions. It offers a type-safe and fluent way to build complex logical expressions.</p><p class="paragraph">This class and its extension functions allow for creating various SQL expressions, including:</p><ul><li><p class="paragraph"><strong>Comparison operators</strong>: <a href="-e-q.html">EQ</a>, <a href="-n-o-t_-e-q.html">NOT_EQ</a>, <a href="-l-t.html">LT</a>, <a href="-l-t-e.html">LTE</a>, <a href="-g-t.html">GT</a>, <a href="-g-t-e.html">GTE</a>, <a href="-i-s.html">IS</a>, <a href="-i-s_-n-o-t.html">IS_NOT</a>.</p></li><li><p class="paragraph"><strong>Pattern matching</strong>: <a href="-l-i-k-e.html">LIKE</a>, <a href="-n-o-t_-l-i-k-e.html">NOT_LIKE</a>, <a href="-g-l-o-b.html">GLOB</a>, <a href="-n-o-t_-g-l-o-b.html">NOT_GLOB</a>, <a href="-r-e-g-e-x-p.html">REGEXP</a>.</p></li><li><p class="paragraph"><strong>Set membership</strong>: <a href="-i-n.html">IN</a>, <a href="-n-o-t_-i-n.html">NOT_IN</a>.</p></li><li><p class="paragraph"><strong>Range checks</strong>: <a href="-b-e-t-w-e-e-n.html">BETWEEN</a>, <a href="-n-o-t_-b-e-t-w-e-e-n.html">NOT_BETWEEN</a>.</p></li><li><p class="paragraph"><strong>Existence checks</strong>: <a href="-e-x-i-s-t-s.html">EXISTS</a>, <a href="-n-o-t_-e-x-i-s-t-s.html">NOT_EXISTS</a>.</p></li><li><p class="paragraph"><strong>Logical operators</strong>: <a href="-expression/-a-n-d.html">Expression.AND</a>, <a href="-expression/-o-r.html">Expression.OR</a>, <a href="-n-o-t.html">NOT</a>.</p></li></ul><p class="paragraph">The <code class="lang-kotlin">Clause</code> is designed to be used within the context of a statement builder (e.g., <a href="../-select-statement/index.html">SelectStatement</a>, <a href="../-update-statement/index.html">UpdateStatement</a>). It generates <a href="-expression/index.html">Expression</a> objects that are internally translated into a SQL query string with appropriate placeholders.</p><h3 class="">Example usage in a <code class="lang-kotlin">WHERE</code> block:</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">select(Employees.employeeId, Employees.firstName)<br>        .from(Employees)<br>        .where {<br>            (Employees.age GTE 18) AND (Employees.firstName LIKE &quot;J%&quot;)<br>        }.execute()</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">The methods are defined as extensions on <a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a> or as standalone functions within the scope of a lambda that has a <code class="lang-kotlin">Clause</code> as its receiver.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-expression/index.html"><span><span>Expression</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-select-statement/where.html"><span>Select</span><wbr></wbr><span>Statement.</span><wbr></wbr><span>where</span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-update-statement/where.html"><span>Update</span><wbr></wbr><span>Statement.</span><wbr></wbr><span>where</span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-delete-statement/where.html"><span>Delete</span><wbr></wbr><span>Statement.</span><wbr></wbr><span>where</span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-604317861%2FConstructors%2F1592252319" anchor-label="Clause" id="-604317861%2FConstructors%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-clause.html"><span><span>Clause</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-604317861%2FConstructors%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-1764794905%2FClasslikes%2F1592252319" anchor-label="Expression" id="-1764794905%2FClasslikes%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-expression/index.html"><span><span>Expression</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1764794905%2FClasslikes%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-expression/index.html">Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1948594127%2FFunctions%2F1592252319" anchor-label="BETWEEN" id="1948594127%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-e-t-w-e-e-n.html"><span><span>BETWEEN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1948594127%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator"> : </span><a href="-b-e-t-w-e-e-n.html">R</a><span class="token operator">?</span><span class="token punctuation">, </span><a href="-b-e-t-w-e-e-n.html">R</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-comparable/index.html">Comparable</a><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">R</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-b-e-t-w-e-e-n.html"><span class="token function">BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">range<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.ranges/-closed-range/index.html">ClosedRange</a><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">R</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">BETWEEN</code> expression using a Kotlin <code class="lang-kotlin">ClosedRange</code> (e.g., <code class="lang-kotlin">1..10</code>).</p></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-b-e-t-w-e-e-n.html"><span class="token function">BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">start<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">end<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">BETWEEN</code> expression to check if a column's value is within the range defined by two other columns.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-b-e-t-w-e-e-n.html"><span class="token function">BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">start<span class="token operator">: </span><a href="-b-e-t-w-e-e-n.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">end<span class="token operator">: </span><a href="-b-e-t-w-e-e-n.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">BETWEEN</code> expression to check if the column's value is within a specified range (inclusive).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1508266857%2FFunctions%2F1592252319" anchor-label="EQ" id="1508266857%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-q.html"><span><span>EQ</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1508266857%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-e-q.html"><span class="token function">EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an equality comparison expression (<code class="lang-kotlin">=</code>) between a column and a subquery.</p></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-e-q.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-e-q.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-e-q.html"><span class="token function">EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-e-q.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an equality comparison expression (<code class="lang-kotlin">=</code> or <code class="lang-kotlin">IS</code>).</p></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-e-q.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-e-q.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-e-q.html"><span class="token function">EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-e-q.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an equality comparison expression (<code class="lang-kotlin">=</code>) between two columns.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="792094829%2FFunctions%2F1592252319" anchor-label="EXISTS" id="792094829%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-x-i-s-t-s.html"><span><span>EXISTS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="792094829%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-e-x-i-s-t-s.html"><span class="token function">EXISTS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an <code class="lang-kotlin">EXISTS</code> expression to check for the existence of rows in a subquery.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1668519340%2FFunctions%2F1592252319" anchor-label="GLOB" id="1668519340%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-l-o-b.html"><span><span>GLOB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1668519340%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-g-l-o-b.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-l-o-b.html"><span class="token function">GLOB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-g-l-o-b.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><br><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-l-o-b.html"><span class="token function">GLOB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">GLOB</code> pattern-matching expression, which is similar to <code class="lang-kotlin">LIKE</code> but uses Unix-style wildcards.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1396930008%2FFunctions%2F1592252319" anchor-label="GT" id="-1396930008%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-t.html"><span><span>GT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1396930008%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t.html"><span class="token function">GT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-g-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-g-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t.html"><span class="token function">GT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-g-t.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-g-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-g-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t.html"><span class="token function">GT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-g-t.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="664046241%2FFunctions%2F1592252319" anchor-label="GTE" id="664046241%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-g-t-e.html"><span><span>GTE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="664046241%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t-e.html"><span class="token function">GTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-g-t-e.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-g-t-e.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t-e.html"><span class="token function">GTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-g-t-e.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-g-t-e.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-g-t-e.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-g-t-e.html"><span class="token function">GTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-g-t-e.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="610614625%2FFunctions%2F1592252319" anchor-label="IN" id="610614625%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n.html"><span><span>IN</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="610614625%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-n.html"><span class="token function">IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an <code class="lang-kotlin">IN</code> expression to check if the column's value is present in the result set of a subquery.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-n.html"><span class="token function">IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">args<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-i-n.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-n.html"><span class="token function">IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>args<span class="token operator">: </span><a href="-i-n.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates an <code class="lang-kotlin">IN</code> expression to check if the column's value is present in a given list of values.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-641744166%2FFunctions%2F1592252319" anchor-label="IS" id="-641744166%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-s.html"><span><span>IS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-641744166%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s.html"><span class="token function">IS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-s.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-s.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s.html"><span class="token function">IS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-i-s.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-s.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-s.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s.html"><span class="token function">IS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-i-s.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1711408230%2FFunctions%2F1592252319" anchor-label="IS_NOT" id="1711408230%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-s_-n-o-t.html"><span>IS_</span><wbr></wbr><span>NOT</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1711408230%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s_-n-o-t.html"><span class="token function">IS_NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s_-n-o-t.html"><span class="token function">IS_NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-i-s_-n-o-t.html"><span class="token function">IS_NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-i-s_-n-o-t.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1944237401%2FFunctions%2F1592252319" anchor-label="LIKE" id="1944237401%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-i-k-e.html"><span><span>LIKE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1944237401%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-l-i-k-e.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-i-k-e.html"><span class="token function">LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-l-i-k-e.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><br><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-i-k-e.html"><span class="token function">LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">LIKE</code> pattern-matching expression.</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-i-k-e.html"><span class="token function">LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">escape<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a <code class="lang-kotlin">LIKE</code> pattern-matching expression with an optional <code class="lang-kotlin">ESCAPE</code> character.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-395536755%2FFunctions%2F1592252319" anchor-label="LT" id="-395536755%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-t.html"><span><span>LT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-395536755%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t.html"><span class="token function">LT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-l-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-l-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t.html"><span class="token function">LT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-l-t.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-l-t.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-l-t.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t.html"><span class="token function">LT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-l-t.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2130070706%2FFunctions%2F1592252319" anchor-label="LTE" id="2130070706%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-l-t-e.html"><span><span>LTE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2130070706%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t-e.html"><span class="token function">LTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-l-t-e.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-l-t-e.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t-e.html"><span class="token function">LTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-l-t-e.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-l-t-e.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-l-t-e.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-l-t-e.html"><span class="token function">LTE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-l-t-e.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1882747800%2FFunctions%2F1592252319" anchor-label="NOT" id="1882747800%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t.html"><span><span>NOT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1882747800%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="-n-o-t.html"><span class="token function">NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><br><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="-n-o-t.html"><span class="token function">NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">expression<span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a logical <code class="lang-kotlin">NOT</code> expression.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="-n-o-t.html"><span class="token function">NOT</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a logical <code class="lang-kotlin">NOT</code> expression for a subquery.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1562157757%2FFunctions%2F1592252319" anchor-label="NOT_BETWEEN" id="-1562157757%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-b-e-t-w-e-e-n.html"><span>NOT_</span><wbr></wbr><span>BETWEEN</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1562157757%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator"> : </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">R</a><span class="token operator">?</span><span class="token punctuation">, </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">R</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-comparable/index.html">Comparable</a><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">R</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-b-e-t-w-e-e-n.html"><span class="token function">NOT_BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">range<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.ranges/-closed-range/index.html">ClosedRange</a><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">R</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-b-e-t-w-e-e-n.html"><span class="token function">NOT_BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">start<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">end<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-b-e-t-w-e-e-n.html"><span class="token function">NOT_BETWEEN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">start<span class="token operator">: </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">end<span class="token operator">: </span><a href="-n-o-t_-b-e-t-w-e-e-n.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="677237853%2FFunctions%2F1592252319" anchor-label="NOT_EQ" id="677237853%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-e-q.html"><span>NOT_</span><wbr></wbr><span>EQ</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="677237853%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-e-q.html"><span class="token function">NOT_EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-e-q.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-e-q.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-e-q.html"><span class="token function">NOT_EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-n-o-t_-e-q.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><br><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-e-q.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-e-q.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-e-q.html"><span class="token function">NOT_EQ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="-n-o-t_-e-q.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a non-equality comparison expression (<code class="lang-kotlin">!=</code> or <code class="lang-kotlin">IS NOT</code>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-884820487%2FFunctions%2F1592252319" anchor-label="NOT_EXISTS" id="-884820487%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-e-x-i-s-t-s.html"><span>NOT_</span><wbr></wbr><span>EXISTS</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-884820487%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-n-o-t_-e-x-i-s-t-s.html"><span class="token function">NOT_EXISTS</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1832922900%2FFunctions%2F1592252319" anchor-label="NOT_GLOB" id="1832922900%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-g-l-o-b.html"><span>NOT_</span><wbr></wbr><span>GLOB</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1832922900%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-g-l-o-b.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-g-l-o-b.html"><span class="token function">NOT_GLOB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-n-o-t_-g-l-o-b.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-g-l-o-b.html"><span class="token function">NOT_GLOB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="734344917%2FFunctions%2F1592252319" anchor-label="NOT_IN" id="734344917%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-i-n.html"><span>NOT_</span><wbr></wbr><span>IN</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="734344917%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-i-n.html"><span class="token function">NOT_IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">selectStatement<span class="token operator">: </span><a href="../-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-i-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-i-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-i-n.html"><span class="token function">NOT_IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">args<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="-n-o-t_-i-n.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-i-n.html">T</a><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><a href="-n-o-t_-i-n.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-i-n.html"><span class="token function">NOT_IN</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>args<span class="token operator">: </span><a href="-n-o-t_-i-n.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="130214581%2FFunctions%2F1592252319" anchor-label="NOT_LIKE" id="130214581%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-o-t_-l-i-k-e.html"><span>NOT_</span><wbr></wbr><span>LIKE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="130214581%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-n-o-t_-l-i-k-e.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-l-i-k-e.html"><span class="token function">NOT_LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-n-o-t_-l-i-k-e.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-l-i-k-e.html"><span class="token function">NOT_LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-n-o-t_-l-i-k-e.html"><span class="token function">NOT_LIKE</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">escape<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1296866058%2FFunctions%2F1592252319" anchor-label="REGEXP" id="1296866058%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-e-g-e-x-p.html"><span><span>REGEXP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1296866058%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="-r-e-g-e-x-p.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator">&gt; </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-r-e-g-e-x-p.html"><span class="token function">REGEXP</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="-r-e-g-e-x-p.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><br><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="-r-e-g-e-x-p.html"><span class="token function">REGEXP</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div><div class="brief "><p class="paragraph">Creates a regular expression match expression (<code class="lang-kotlin">REGEXP</code>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1860874206%2FFunctions%2F1592252319" anchor-label="toBetween" id="1860874206%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-between.html"><span>to</span><wbr></wbr><span><span>Between</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1860874206%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="to-between.html"><span class="token function">toBetween</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">column<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">start<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span></span><span class="parameter ">end<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span></span><span class="parameter ">not<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1272086300%2FFunctions%2F1592252319" anchor-label="toIn" id="-1272086300%2FFunctions%2F1592252319" data-filterable-set=":kqlite/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-in.html"><span>to</span><wbr></wbr><span><span>In</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1272086300%2FFunctions%2F1592252319"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><span class="token keyword">protected </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="to-in.html"><span class="token function">toIn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">column<span class="token operator">: </span><a href="../../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">range<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-iterable/index.html">Iterable</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">not<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-expression/index.html">Clause.Expression</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

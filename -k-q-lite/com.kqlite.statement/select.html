@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>select</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../images/logo-icon.svg">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/guide.css" rel="Stylesheet">
+<link href="../../styles/landing.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    KQLite
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":kqlite/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kqlite/commonMain"
+                                       data-filter=":kqlite/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    KQLite
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="member" id="content" pageIds="KQLite::com.kqlite.statement//select/TypeParam(bounds=[com.kqlite.table.KQLiteTable])#vararg(com.kqlite.column.KQLiteColumn[*])#kotlin.Boolean/PointingToDeclaration//1592252319">
+  <div class="breadcrumbs"><a href="../../index.html">KQLite</a><span class="delimiter">/</span><a href="index.html">com.kqlite.statement</a><span class="delimiter">/</span><span class="current">select</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>select</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kqlite/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="select.html">T</a><span class="token operator"> : </span><a href="../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a><span class="token operator">&gt; </span><a href="select.html">T</a><span class="token punctuation">.</span><a href="select.html"><span class="token function">select</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>columns<span class="token operator">: </span><a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">distinct<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-select-statement/index.html">SelectStatement</a><span class="token operator">&lt;</span><a href="select.html">T</a><span class="token operator">&gt;</span></div><p class="paragraph">Begins building a <code class="lang-kotlin">SELECT</code> query statement.</p><p class="paragraph">This function serves as the entry point for creating complex <code class="lang-kotlin">SELECT</code> queries. It allows you to specify which columns to retrieve and whether to fetch only distinct rows. You can then chain other methods like <code class="lang-kotlin">where</code>, <code class="lang-kotlin">join</code>, <code class="lang-kotlin">orderBy</code>, etc., to further refine the query. To execute the query and get the results, call <code class="lang-kotlin">execute()</code> at the end of the chain.</p><p class="paragraph">If no columns are specified, all columns (<code class="lang-kotlin">*</code>) from the table will be selected.</p><h3 class="">Example</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Selects distinct first names and ages from the Employees table,<br>// for employees older than 25, ordered by age in descending order.<br>val cursor =<br>         Employees<br>            .select(Employees.firstName, Employees.age, distinct = true)<br>            .where { Employees.age GT 25 }<br>            .orderBy(Employees.age, Sort.DESC)<br>            .execute()<br><br>// Process the results<br>cursor.forEach { row -&gt;<br>         println(&quot;${row[Employees.firstName]}, ${row[Employees.age]}&quot;)<br>}</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <a href="-select-statement/index.html">SelectStatement</a> instance that can be used to further build the query.</p></span><span class="kdoc-tag"><h4 class="">Receiver</h4><p class="paragraph">The <a href="../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a> instance to select from.</p></span><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>columns</span></span></u></div></span></div><div><div class="title"><p class="paragraph">A variable number of <a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a>s to be included in the result set.                 If empty, all columns (<code class="lang-kotlin">*</code>) are selected.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>distinct</span></span></u></div></span></div><div><div class="title"><p class="paragraph">If <code class="lang-kotlin">true</code>, the query will return only unique rows (<code class="lang-kotlin">SELECT DISTINCT</code>). Defaults to <code class="lang-kotlin">false</code>.</p></div></div></div></div></div><h4 class="tableheader">Type Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of the <a href="../com.kqlite.table/-k-q-lite-table/index.html">KQLiteTable</a> this query is being performed on.</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="quick-select.html"><span>quick</span><wbr></wbr><span><span>Select</span></span></a></div></span></div><div></div></div></div></div><hr><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">fun </span><a href="select.html"><span class="token function">select</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>columns<span class="token operator">: </span><a href="../com.kqlite.column/-k-q-lite-column/index.html">KQLiteColumn</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">distinct<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-statement/index.html">Statement</a></div><p class="paragraph">Starts building a <code class="lang-kotlin">SELECT</code> statement with the specified columns.</p><p class="paragraph">This is the entry point for creating a query that retrieves data from the database. The resulting <code class="lang-kotlin">Statement</code> object can then be chained with <code class="lang-kotlin">from()</code> to specify the table.</p><h3 class="">Example</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Select specific columns<br>select(Users.id, Users.name).from(Users)<br><br>// Select all columns (*)<br>select().from(Users)<br><br>// Select distinct values<br>select(Users.city, distinct = true).from(Users)<br><br>// Select independent queries<br>select(DATETIME(1761301829).unixepoch()).execute()<br>select(JSON_ARRAY_LENGTH(JSON(&quot;[10, 20]&quot;))).execute()<br>select(MAX(IntLiteral(10), IntLiteral(20))).execute()</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <a href="-statement/index.html">Statement</a> object representing the initial part of the <code class="lang-kotlin">SELECT</code> query.</p></span><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">MOHAMMAD AZIM ANSARI</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>columns</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The columns to be selected in the query. This can be individual columns or a table's <code class="lang-kotlin">ALL</code> property.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>distinct</span></span></u></div></span></div><div><div class="title"><p class="paragraph">If <code class="lang-kotlin">true</code>, the query will only return unique rows (<code class="lang-kotlin">SELECT DISTINCT</code>). Defaults to <code class="lang-kotlin">false</code>.</p></div></div></div></div></div><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-statement/index.html"><span><span>Statement</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="-select-statement/index.html"><span>Select</span><wbr></wbr><span><span>Statement</span></span></a></div></span></div><div></div></div></div><div class="table-row table-row_content" data-filterable-current=":kqlite/commonMain" data-filterable-set=":kqlite/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="quick-select.html"><span>quick</span><wbr></wbr><span><span>Select</span></span></a></div></span></div><div></div></div></div></div></div></div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

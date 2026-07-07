@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>DELETE - KQLite</title>
+    <link href="../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+        if (storage == null) {
+            const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (osDarkSchemePreferred === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        } else {
+            const savedDarkMode = JSON.parse(storage)
+            if (savedDarkMode === true) {
+                document.getElementsByTagName("html")[0].classList.add("theme-dark")
+            }
+        }
+    </script>
+    <script type="text/javascript" src="../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../styles/style.css" rel="Stylesheet">
+    <link href="../styles/main.css" rel="Stylesheet">
+    <link href="../styles/prism.css" rel="Stylesheet">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../styles/guide.css" rel="Stylesheet">
+    <link href="../ui-kit/ui-kit.min.css" rel="Stylesheet">
+    <script type="text/javascript" src="../scripts/safe-local-storage_blocking.js"></script>
+    <script type="text/javascript" src="../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../scripts/main.js" defer="defer"></script>
+    <script type="text/javascript" src="../scripts/prism.js" async="async"></script>
+    <script type="text/javascript" src="../ui-kit/ui-kit.min.js" defer="defer"></script>
+    <link href="../images/logo-icon.svg">
+    <link href="../styles/logo-styles.css" rel="Stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../index.html" tabindex="1">
+                KQLite
+            </a>
+            <a class="button" href="../api.html">
+                API Reference
+            </a>
+            <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+            </button>
+            <div class="navigation-controls--break ui-kit_mobile-only"></div>
+            <div class="library-version" id="library-version"> 0.2.0 </div>
+            <div class="navigation-controls">
+                <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+                </button>
+                <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">
+                    Search in
+                    API
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <nav id="leftColumn" class="sidebar">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox" aria-label="Table of contents">
+                        <div class="dropdown--header">
+                            <span>
+                                KQLite
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner">
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/index.html" class="toc--link">
+                                        <span>Overview</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/tables.html" class="toc--link">
+                                        <span>Tables</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/columns.html" class="toc--link">
+                                        <span>Columns</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/driver.html" class="toc--link">
+                                        <span>Drivers</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/database.html" class="toc--link">
+                                        <span>Database</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/quick.html" class="toc--link">
+                                        <span>Quick API</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/insert.html" class="toc--link">
+                                        <span>INSERT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/select.html" class="toc--link">
+                                        <span>SELECT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/update.html" class="toc--link">
+                                        <span>UPDATE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0" data-active="true">
+                                <div class="toc--row">
+                                    <a href="guide/delete.html" class="toc--link">
+                                        <span>DELETE</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/flow.html" class="toc--link">
+                                        <span>Flow</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toc--part" data-nesting-level="0">
+                                <div class="toc--row">
+                                    <a href="guide/migration.html" class="toc--link">
+                                        <span>Migration</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </nav>
+            <div id="main" role="main" style="margin-left: 0px;">
+                <div class="main-content" id="content">
+                    <div class="breadcrumbs"></div>
+                    <div class="cover ">
+                        <h1 class="cover"><span><span>KQLite DELETE</span></span></h1>
+                    </div>
+
+
+                    <h3>Quickly deleting data</h3>
+                    <div class="sample-container">
+                        <pre class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// DELETE FROM Artists WHERE ArtistId = ?;</span>
+<span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token function">quickDelete</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+    <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">artistId</span>.<span class="token function">EQ</span>(<span class="token number">3</span>)
+<span class="token punctuation">}</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>Delete all rows without WHERE</h3>
+                    <div class="sample-container">
+                        <pre
+                            class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// DELETE FROM Artists;</span>
+<span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token function">quickDelete</span><span class="token punctuation">(</span><span class="token property">where</span> <span class="token operator">=</span> <span class="token literal">null</span><span class="token punctuation">)</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>Delete execute</h3>
+                    <div class="sample-container">
+                        <pre
+                            class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// DELETE FROM artists WHERE Name LIKE ? LIMIT ?;</span>
+<span class="token class-name">Artists</span>
+    <span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">where</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+        <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">artistName</span> <span class="token keyword">LIKE</span> <span class="token string">"%Cool%"</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">()</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+                    <h3>Delete RETURNING</h3>
+                    <div class="sample-container">
+                        <pre
+                            class="language-kotlin"><code class="block language-kotlin" theme="idea"><span class="token comment">// DELETE FROM artists WHERE ArtistId &gt; ?</span>
+<span class="token comment">// ORDER BY ArtistId DESC LIMIT ?</span>
+<span class="token comment">// RETURNING ArtistId;</span>
+<span class="token keyword">val</span> <span class="token variable">cursor</span> <span class="token operator">=</span> <span class="token class-name">Artists</span>
+    <span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">where</span> <span class="token punctuation">{</span> <span class="token implicit-param"> it<span class="token operator">:</span> Artists </span>
+        <span class="token bold">it</span><span class="token punctuation">.</span><span class="token property">artistId</span> <span class="token function">GT</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">,</span> <span class="token class-name">Sort</span><span class="token punctuation">.</span><span class="token property">DESC</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">executeReturning</span><span class="token punctuation">(</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">)</span>
+
+<span class="token keyword">val</span> <span class="token variable">deleted</span> <span class="token operator">=</span> <span class="token variable">cursor</span>
+    <span class="token punctuation">.</span><span class="token function">asSequence</span><span class="token punctuation">()</span>
+    <span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token bold">it</span><span class="token punctuation">[</span><span class="token class-name">Artists</span><span class="token punctuation">.</span><span class="token property">artistId</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">()</span>
+
+<span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Artists deleted: ${<span class="token variable">deleted</span>.joinToString()}"</span><span class="token punctuation">)</span>
+<span class="token variable">cursor</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">()</span></code></pre>
+                        <span class="copy-tooltip">
+                            <div class="copy-popup-wrapper popup-to-left"><span
+                                    class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
+                                class="copy-icon"></span>
+                        </span>
+                    </div>
+
+
+
+                    <div style="margin-top: 64px;">
+                        <a class="" href="update.html"> ⬅ KQLite UPDATE </a>
+                        <a class="next-btn" href="update.html"> KQLite UPDATE ⮕ </a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer--container">
+                        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+                        <div class="footer--content">
+                            <div>
+                                <div>Copyright &copy; 2025 MohdAzim Ansari. All rights reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
