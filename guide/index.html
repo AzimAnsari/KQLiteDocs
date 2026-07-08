@@ -168,19 +168,26 @@
                 <div class="main-content" id="content">
                     <div class="breadcrumbs"></div>
                     <div class="cover ">
-                        <h1 class="cover"><span>Overview</span></h1>
+                        <h1 class="cover"><span>KQLite</span></h1>
                     </div>
                     <p class="paragraph">
-                        <b>KQLite</b> is a lightweight, multiplatform SQLite wrapper to write typesafe DSL queries.
-                        KQLite allows you to write SQLite queries using a Kotlin object-style DSL instead of raw SQL
-                        strings. KQLite exposes typesafe <a class="token class-name"
-                            href="../-k-q-lite/com.kqlite.cursor/-k-q-lite-cursor/index.html"
-                            target="_blank">KQLiteCursor</a>
-                        which executes lazily and autoclosed when fully iterated.
-                        It utilizes <code>androidx.sqlite:sqlite</code> multiplatform drivers internally to ensure safe
-                        query execution and binding arguments.
+                        KQLite is a Lightweight, Kotlin Multiplatform DSL to write typesafe SQL queries.
+                        It allows you to write SQL queries using a Kotlin object-style DSL instead of raw SQL
+                        strings.
                     </p>
-                    <h5>KQLite supports following KMP targets</h5>
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li>Features Object-relational Mapping (ORM) style interaction with tables.</li>
+                        <li>Returns typesafe cursor which executes lazily on read and auto-closed when fully iterated.
+                        </li>
+                        <li>Typesafe values binding and reading.</li>
+                        <li>Entity binding and mapping.</li>
+                        <li>Cursor result as Flow which emits on every INSERT, UPDATE and DELETE on table.</li>
+                        <li>Quick convenience API.</li>
+                        <li>Builtin SQLite functions. Scalar, Aggregate, Math, Date & Time, JSON.</li>
+                        <li>SQLite familiar DSL.</li>
+                    </ul>
+                    <h3>KQLite supports following KMP targets</h3>
                     <ul>
                         <li>Android</li>
                         <li>iOS</li>
@@ -236,7 +243,7 @@ TblContact
 val cursor = TblContact
     .select(TblContact.<span class="token variable">id</span>, TblContact.<span class="token variable">firstName</span>)
     .where { <span class="token implicit-param no-copy"> it: <span class="token punctuation">TblContact</span> </span>
-        <span class="token bold">it</span>.<span class="token variable">firstName</span> <span class="token function">LIKE</span> "%John%" 
+        <span class="token bold">it</span>.<span class="token variable">firstName</span> <span class="token function">LIKE</span> "%John%"
     }.execute()
 
 cursor
@@ -316,7 +323,9 @@ val id: Int =
         .bind { <span class="token implicit-param no-copy"> it: <span class="token punctuation">TblContact</span> </span>
             <span class="token bold">it</span>.<span class="token variable">firstName</span>.bind("John")
             <span class="token bold">it</span>.<span class="token variable">phone</span>.bind(JSON_ARRAY("1234567890", "0987654321"))
-        }.executeReturning(TblContact.<span class="token variable">id</span>)</code></pre>
+        }.use {
+            <span class="token bold">it</span>.executeReturning(TblContact.<span class="token variable">id</span>)
+        }</code></pre>
                         <span class="copy-tooltip">
                             <div class="copy-popup-wrapper popup-to-left"><span
                                     class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span
@@ -387,7 +396,7 @@ TblContact.quickDelete { <span class="token implicit-param no-copy"> it: <span c
                         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
                         <div class="footer--content">
                             <div>
-                                <div>Copyright &copy; 2025 MohdAzim Ansari. All rights reserved.</div>
+                                <div>Copyright &copy; 2026 Mohammad Azim Ansari. All rights reserved.</div>
                             </div>
                         </div>
                     </div>
