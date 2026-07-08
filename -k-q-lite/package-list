@@ -180,7 +180,6 @@ $dokka.location:com.kqlite.database/KQLiteDatabase/getKQLiteTables/#/PointingToD
 $dokka.location:com.kqlite.database/KQLiteDatabase/inTransaction/#androidx.sqlite.SQLiteConnection?/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/in-transaction.html
 $dokka.location:com.kqlite.database/KQLiteDatabase/onConfigure/#com.kqlite.pragma.KQLitePragma/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/on-configure.html
 $dokka.location:com.kqlite.database/KQLiteDatabase/onCreate/#androidx.sqlite.SQLiteConnection/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/on-create.html
-$dokka.location:com.kqlite.database/KQLiteDatabase/onOpen/#androidx.sqlite.SQLiteConnection/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/on-open.html
 $dokka.location:com.kqlite.database/KQLiteDatabase/open/#kotlin.Int?/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/open.html
 $dokka.location:com.kqlite.database/KQLiteDatabase/pragma/#/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/pragma.html
 $dokka.location:com.kqlite.database/KQLiteDatabase/schema/#/PointingToDeclaration/-k-q-lite/com.kqlite.database/-k-q-lite-database/schema.html
