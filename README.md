@@ -17,7 +17,7 @@
 ```kotlin
 sourceSets {
     commonMain.dependencies {
-        implementation("com.kqlite:kqlite:0.2.0")
+        implementation("com.kqlite:kqlite:0.2.1")
     }
 }
 ```
