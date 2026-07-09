@@ -222,6 +222,7 @@ val singleFlow: Flow<Contact?> =
 - [KQLite Contacts Official Sample](https://github.com/AzimAnsari/KQLiteContacts).
 - [PeopleInSpace KQLite Sample](https://github.com/AzimAnsari/PeopleInSpaceKQLite)
 - [Droidcon KQLite Sample](https://github.com/AzimAnsari/DroidconKQLite)
+- [D-KMP KQLite sample](https://github.com/AzimAnsari/D-KMP-sample-KQLite)
 
 ## Authors
 
